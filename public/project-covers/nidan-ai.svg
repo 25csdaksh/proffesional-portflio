@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg-nidan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1017"/>
+      <stop offset="100%" stop-color="#101c2a"/>
+    </linearGradient>
+    <radialGradient id="glow-nidan" cx="75%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid-nidan" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1c3047" stroke-width="0.5" stroke-opacity="0.5"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg-nidan)"/>
+  <rect width="800" height="450" fill="url(#glow-nidan)"/>
+  <rect width="800" height="450" fill="url(#grid-nidan)"/>
+  
+  <!-- Subtle radar pulse rings -->
+  <circle cx="620" cy="225" r="160" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
+  <circle cx="620" cy="225" r="110" fill="none" stroke="#e2c286" stroke-width="1" stroke-opacity="0.25"/>
+  
+  <!-- Medical Pulse / Stethoscope Geometric Icon -->
+  <g transform="translate(565, 175)" stroke="#38bdf8" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 50 L35 50 L45 20 L55 75 L68 35 L76 58 L85 50 L105 50" stroke="#38bdf8" stroke-width="3"/>
+    <circle cx="58" cy="48" r="45" stroke="#e2c286" stroke-width="1.5" stroke-opacity="0.4"/>
+  </g>
+  
+  <!-- Project Branding Content -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="186" height="26" rx="13" fill="#0284c7" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.3"/>
+    <text x="15" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#38bdf8" letter-spacing="1">CLINICAL DECISION SUPPORT</text>
+    
+    <text x="0" y="80" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#f3f4f6">NIDAN AI</text>
+    <text x="0" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#e2c286" font-weight="500">Intelligent Clinical Insights &amp; Report Analysis</text>
+    <text x="0" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8e95a5">FastAPI · PostgreSQL · Next.js · TypeScript · Guardrails</text>
+    
+    <!-- Status badge -->
+    <g transform="translate(0, 185)">
+      <circle cx="6" cy="6" r="4" fill="#38bdf8"/>
+      <text x="18" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#8e95a5" font-weight="500">Status: Planned / Development</text>
+    </g>
+  </g>
+</svg>
+

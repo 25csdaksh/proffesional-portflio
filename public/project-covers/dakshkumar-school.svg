@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg-school" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141109"/>
+      <stop offset="100%" stop-color="#221a0f"/>
+    </linearGradient>
+    <radialGradient id="glow-school" cx="75%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid-school" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#3b2d18" stroke-width="0.5" stroke-opacity="0.5"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg-school)"/>
+  <rect width="800" height="450" fill="url(#glow-school)"/>
+  <rect width="800" height="450" fill="url(#grid-school)"/>
+  
+  <circle cx="620" cy="225" r="160" fill="none" stroke="#f59e0b" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
+  <circle cx="620" cy="225" r="110" fill="none" stroke="#e2c286" stroke-width="1" stroke-opacity="0.25"/>
+  
+  <!-- School Campus / ERP Columns Icon -->
+  <g transform="translate(565, 175)" stroke="#fbbf24" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 40 L50 15 L90 40 L80 40 L80 85 L20 85 L20 40 Z" fill="#f59e0b" fill-opacity="0.12"/>
+    <path d="M35 85 L35 55 L65 55 L65 85"/>
+    <line x1="10" y1="88" x2="90" y2="88" stroke="#e2c286" stroke-width="3"/>
+  </g>
+  
+  <!-- Project Branding Content -->
+  <g transform="translate(60, 105)">
+    <rect x="0" y="0" width="180" height="26" rx="13" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.3"/>
+    <text x="15" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#fbbf24" letter-spacing="1">SCHOOL ERP PLATFORM</text>
+    
+    <text x="0" y="75" font-family="Georgia, serif" font-size="38" font-weight="bold" fill="#f3f4f6">Dakshkumar School</text>
+    <text x="0" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#e2c286" font-weight="500">Multi-Role Dashboards, Fee Billing &amp; Hostels</text>
+    <text x="0" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8e95a5">React · Vite · Node.js · Express · MongoDB</text>
+    
+    <!-- Status badge -->
+    <g transform="translate(0, 185)">
+      <circle cx="6" cy="6" r="4" fill="#fbbf24"/>
+      <text x="18" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#8e95a5" font-weight="500">Status: Development</text>
+    </g>
+  </g>
+</svg>
+

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg-student" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1319"/>
+      <stop offset="100%" stop-color="#12222d"/>
+    </linearGradient>
+    <radialGradient id="glow-student" cx="75%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid-student" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1d3747" stroke-width="0.5" stroke-opacity="0.5"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg-student)"/>
+  <rect width="800" height="450" fill="url(#glow-student)"/>
+  <rect width="800" height="450" fill="url(#grid-student)"/>
+  
+  <circle cx="620" cy="225" r="160" fill="none" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
+  <circle cx="620" cy="225" r="110" fill="none" stroke="#e2c286" stroke-width="1" stroke-opacity="0.25"/>
+  
+  <!-- Graduation / Student Portal Icon -->
+  <g transform="translate(565, 175)" stroke="#22d3ee" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 20 L15 40 L50 60 L85 40 Z" fill="#06b6d4" fill-opacity="0.15"/>
+    <path d="M25 46 L25 72 C25 82 50 90 50 90 C50 90 75 82 75 72 L75 46"/>
+    <path d="M85 40 L85 70" stroke="#e2c286" stroke-width="2"/>
+    <circle cx="85" cy="74" r="3" fill="#e2c286"/>
+  </g>
+  
+  <!-- Project Branding Content -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="186" height="26" rx="13" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-opacity="0.3"/>
+    <text x="15" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#22d3ee" letter-spacing="1">ACADEMIC &amp; STUDENT PORTAL</text>
+    
+    <text x="0" y="80" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#f3f4f6">StudentHub</text>
+    <text x="0" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#e2c286" font-weight="500">Self-Service Student Dashboard &amp; Academics</text>
+    <text x="0" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8e95a5">Web Development · Student Management · Attendance · Grades</text>
+    
+    <!-- Status badge -->
+    <g transform="translate(0, 185)">
+      <circle cx="6" cy="6" r="4" fill="#22d3ee"/>
+      <text x="18" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#8e95a5" font-weight="500">Status: Development</text>
+    </g>
+  </g>
+</svg>
+

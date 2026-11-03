@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c120e"/>
+      <stop offset="100%" stop-color="#142119"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1f382a" stroke-width="0.5" stroke-opacity="0.5"/>
+    </pattern>
+  </defs>
+  
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- Subtle decorative ring -->
+  <circle cx="620" cy="225" r="160" fill="none" stroke="#10b981" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6"/>
+  <circle cx="620" cy="225" r="110" fill="none" stroke="#e2c286" stroke-width="1" stroke-opacity="0.25"/>
+  
+  <!-- Leaf / Agtech Icon Illustration -->
+  <g transform="translate(565, 170)" stroke="#10b981" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M55 10 C20 20 10 60 10 95 C45 95 85 85 95 50 C95 10 55 10 55 10 Z" fill="#10b981" fill-opacity="0.12"/>
+    <path d="M10 95 C35 65 65 45 95 50"/>
+    <path d="M40 70 C55 60 70 65 70 65"/>
+    <path d="M28 82 C38 78 48 80 48 80"/>
+  </g>
+  
+  <!-- Project Branding Content -->
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="180" height="26" rx="13" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.3"/>
+    <text x="15" y="17" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#10b981" letter-spacing="1">AI SMART AGRICULTURE</text>
+    
+    <text x="0" y="80" font-family="Georgia, serif" font-size="44" font-weight="bold" fill="#f3f4f6">KrishiSeva</text>
+    <text x="0" y="115" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" fill="#e2c286" font-weight="500">Gujarat-Focused Agri Advisory &amp; Disease Detection</text>
+    <text x="0" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" fill="#8e95a5">MobileNetV2 · PyTorch · Gemini AI · Node.js</text>
+    
+    <!-- Status badge -->
+    <g transform="translate(0, 185)">
+      <circle cx="6" cy="6" r="4" fill="#10b981"/>
+      <text x="18" y="10" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#8e95a5" font-weight="500">Status: Implemented / In Progress</text>
+    </g>
+  </g>
+</svg>
+

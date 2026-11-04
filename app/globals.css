@@ -474,10 +474,12 @@ html[data-theme="light"] .text-link:hover {
 
 .art-orbit {
   position: absolute;
-  border: 1px solid var(--border);
+  border: 1.5px solid rgba(226, 186, 101, 0.5);
   border-radius: 50%;
   transform: rotate(-28deg);
   animation: orbit-drift 26s linear infinite;
+  box-shadow: 0 0 15px rgba(226, 186, 101, 0.15);
+  pointer-events: none;
 }
 
 .orbit-one {
@@ -554,6 +556,24 @@ html[data-theme="light"] .art-note {
 
 html[data-theme="light"] .art-spark {
   color: #E2BA65;
+}
+
+html[data-theme="light"] .art-orbit {
+  border: 1.5px solid #E2BA65;
+  box-shadow: 0 0 20px rgba(226, 186, 101, 0.4);
+}
+
+html[data-theme="light"] .orbit-one {
+  border-color: #E2BA65;
+}
+
+html[data-theme="light"] .orbit-two {
+  border-color: #E2BA65;
+}
+
+html[data-theme="light"] .art-sun {
+  background: radial-gradient(circle, rgba(226, 186, 101, 0.28) 0%, rgba(226, 186, 101, 0.08) 50%, transparent 70%);
+  filter: blur(14px);
 }
 
 .art-index {

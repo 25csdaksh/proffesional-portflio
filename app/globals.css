@@ -599,6 +599,81 @@ html[data-theme="light"] .art-card {
   color: var(--foreground);
 }
 
+/* Core Philosophy Quote Card in About Section */
+.philosophy-quote-card {
+  margin: 26px 0 20px;
+  padding: 20px 24px;
+  background: rgba(226, 194, 134, 0.05);
+  border-left: 3px solid var(--primary);
+  border-top: 1px solid var(--card-border);
+  border-right: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+html[data-theme="light"] .philosophy-quote-card {
+  background: #fbf8f2;
+  border-color: #e5ded3;
+  border-left-color: var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.philosophy-quote-card:hover {
+  transform: translateX(4px);
+  background: rgba(226, 194, 134, 0.08);
+}
+
+.philosophy-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10.5px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.philosophy-quote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17.5px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--foreground);
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.philosophy-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.3px;
+}
+
+.philosophy-author b {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.philosophy-author .author-dot {
+  color: var(--primary);
+}
+
+.philosophy-author em {
+  font-style: normal;
+  color: var(--primary);
+}
+
 /* ==========================================================================
    HOME PAGE FEATURED PROJECTS SECTION (1-2 Line Concise Info Boxes)
    ========================================================================== */

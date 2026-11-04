@@ -15,6 +15,7 @@ import {
   MoveUpRight,
   Sparkles,
   Sun,
+  Quote,
 } from "lucide-react";
 
 export function CreativePortfolio() {
@@ -216,6 +217,22 @@ export function CreativePortfolio() {
               I&apos;m always looking for the next problem that teaches me
               something new.
             </p>
+
+            {/* Core Philosophy Quote Block */}
+            <div className="philosophy-quote-card" data-reveal>
+              <div className="philosophy-kicker">
+                <Quote size={13} /> CORE PHILOSOPHY
+              </div>
+              <blockquote className="philosophy-quote">
+                &ldquo;I don&apos;t just want to write code. I want to build products people remember.&rdquo;
+              </blockquote>
+              <div className="philosophy-author">
+                <b>Daksh Soni</b>
+                <span className="author-dot">•</span>
+                <em>Engineering Mindset</em>
+              </div>
+            </div>
+
             <div className="interest-row">
               <span>
                 <Sparkles size={15} /> Currently curious about

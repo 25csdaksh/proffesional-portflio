@@ -14,6 +14,7 @@ import {
   Stethoscope,
   Wheat,
   ShieldCheck,
+  Gem,
 } from "lucide-react";
 import { projectsData, type Project } from "@/lib/projects";
 
@@ -81,6 +82,24 @@ const featuredProjectsMeta: FeaturedProjectInfo[] = [
       "Proactive risk detection system engineered for the IBM BoB AI Innovation Hackathon 2026 to automatically audit clinical trial protocol compliance and deviations.",
     highlightPills: ["Python", "FastAPI", "Risk Modeling", "IBM Hackathon"],
   },
+  {
+    id: "swayur-agrotech",
+    domain: "AgriBusiness & Commerce",
+    domainIcon: Building2,
+    role: "Bio-AgriTech Commercial Portal",
+    oneToTwoLineDesc:
+      "Authoritative distributor pipeline and certified product catalog for sustainable bio-fertilizers, soil revitalisation data, and B2B dealer workflows.",
+    highlightPills: ["AgriTech", "E-Commerce", "React", "Next.js"],
+  },
+  {
+    id: "devkrupa-jewellers",
+    domain: "Luxury E-Commerce & Retail",
+    domainIcon: Gem,
+    role: "Fine Jewellery & Bullion Catalog",
+    oneToTwoLineDesc:
+      "E-commerce storefront showcasing handcrafted gold, diamond, and silver collections with festive making-charge discount engines and bespoke order booking.",
+    highlightPills: ["E-Commerce", "React", "UI/UX", "Tailwind"],
+  },
 ];
 
 export function HomeProjectsSection() {
@@ -102,14 +121,14 @@ export function HomeProjectsSection() {
           position: relative;
         }
         .no-photo-projects-section .section-header-wrap {
-          max-width: 1080px;
-          margin: 0 auto 44px;
+          max-width: 1400px;
+          margin: 0 auto 40px;
           display: flex;
           align-items: flex-end;
           justify-content: space-between;
           gap: 28px;
           flex-wrap: wrap;
-          padding: 0 40px;
+          padding: 0 32px;
         }
         .no-photo-projects-section .header-title-box h2 {
           font-family: Georgia, 'Times New Roman', serif;
@@ -154,22 +173,22 @@ export function HomeProjectsSection() {
           box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
         }
         .no-photo-projects-section .info-cards-grid {
-          max-width: 1080px;
+          max-width: 1400px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 24px;
-          padding: 0 40px;
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 20px;
+          padding: 0 32px;
         }
         .no-photo-projects-section .info-project-card {
           background: var(--card);
           border: 1px solid var(--card-border);
           border-radius: 12px;
-          padding: 26px 28px;
+          padding: 22px 20px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          gap: 18px;
+          gap: 15px;
           transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
                       border-color 0.25s ease,
                       box-shadow 0.25s ease,
@@ -197,15 +216,15 @@ export function HomeProjectsSection() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 12px;
+          gap: 8px;
         }
         .no-photo-projects-section .card-domain-badge {
           display: inline-flex;
           align-items: center;
-          gap: 7px;
+          gap: 6px;
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 10px;
-          letter-spacing: 0.8px;
+          font-size: 9.5px;
+          letter-spacing: 0.6px;
           text-transform: uppercase;
           color: var(--primary);
           font-weight: 600;
@@ -213,12 +232,13 @@ export function HomeProjectsSection() {
         .no-photo-projects-section .card-status-badge {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
+          gap: 5px;
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 9.5px;
-          padding: 3px 9px;
+          font-size: 9px;
+          padding: 2.5px 8px;
           border-radius: 9999px;
           font-weight: 600;
+          white-space: nowrap;
         }
         .no-photo-projects-section .status-live-pill {
           background: rgba(16, 185, 129, 0.12);
@@ -250,25 +270,25 @@ export function HomeProjectsSection() {
           display: flex;
           align-items: baseline;
           justify-content: space-between;
-          gap: 10px;
+          gap: 8px;
         }
         .no-photo-projects-section .card-title-row h3 {
           font-family: Georgia, 'Times New Roman', serif;
-          font-size: 23px;
+          font-size: 19px;
           font-weight: 600;
-          letter-spacing: -0.4px;
+          letter-spacing: -0.3px;
           color: var(--foreground);
           margin: 0;
-          line-height: 1.2;
+          line-height: 1.25;
         }
         .no-photo-projects-section .card-index-num {
           font-family: Georgia, serif;
-          font-size: 15px;
+          font-size: 14px;
           color: var(--muted);
           font-style: italic;
         }
         .no-photo-projects-section .card-role-subtitle {
-          font-size: 12px;
+          font-size: 11.5px;
           font-weight: 500;
           color: var(--primary);
           margin: 0;
@@ -278,7 +298,7 @@ export function HomeProjectsSection() {
           background: rgba(255, 255, 255, 0.02);
           border: 1px solid rgba(255, 255, 255, 0.06);
           border-radius: 8px;
-          padding: 13px 15px;
+          padding: 11px 13px;
           margin: 4px 0 2px;
         }
         html[data-theme="light"] .no-photo-projects-section .one-two-line-box {
@@ -286,8 +306,8 @@ export function HomeProjectsSection() {
           border-color: #e2e8f0;
         }
         .no-photo-projects-section .one-two-line-box p {
-          font-size: 13px;
-          line-height: 1.65;
+          font-size: 12.5px;
+          line-height: 1.6;
           color: #94a3b8;
           margin: 0;
           display: -webkit-box;
@@ -301,13 +321,13 @@ export function HomeProjectsSection() {
         .no-photo-projects-section .card-tech-pills {
           display: flex;
           align-items: center;
-          gap: 6px;
+          gap: 5px;
           flex-wrap: wrap;
         }
         .no-photo-projects-section .tech-pill {
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 10px;
-          padding: 4px 9px;
+          font-size: 9.5px;
+          padding: 3px 7px;
           border-radius: 4px;
           background: rgba(255, 255, 255, 0.04);
           border: 1px solid var(--card-border);
@@ -323,18 +343,18 @@ export function HomeProjectsSection() {
           align-items: center;
           justify-content: space-between;
           border-top: 1px solid var(--border);
-          padding-top: 14px;
-          gap: 12px;
+          padding-top: 12px;
+          gap: 10px;
         }
         .no-photo-projects-section .btn-live-link {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
+          gap: 5px;
           background: var(--primary);
           color: #090a0f;
-          font-size: 11.5px;
+          font-size: 11px;
           font-weight: 700;
-          padding: 8px 15px;
+          padding: 7px 12px;
           border-radius: 5px;
           text-decoration: none;
           transition: all 0.2s ease;
@@ -347,7 +367,7 @@ export function HomeProjectsSection() {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          font-size: 11.5px;
+          font-size: 11px;
           color: var(--muted);
           text-decoration: none;
           transition: color 0.2s ease;
@@ -356,9 +376,9 @@ export function HomeProjectsSection() {
           color: var(--primary);
         }
         .no-photo-projects-section .bottom-summary-banner {
-          max-width: 1080px;
+          max-width: 1400px;
           margin: 36px auto 0;
-          padding: 22px 32px;
+          padding: 20px 28px;
           background: var(--card);
           border: 1px solid var(--card-border);
           border-radius: 10px;
@@ -408,15 +428,21 @@ export function HomeProjectsSection() {
           transform: translateY(-2px);
           box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
         }
-        @media (max-width: 860px) {
+        @media (max-width: 1240px) {
+          .no-photo-projects-section .info-cards-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+          }
+        }
+        @media (max-width: 680px) {
           .no-photo-projects-section .info-cards-grid {
             grid-template-columns: 1fr;
-            padding: 0 20px;
+            padding: 0 16px;
           }
           .no-photo-projects-section .section-header-wrap,
           .no-photo-projects-section .bottom-summary-banner {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 16px;
+            padding-right: 16px;
           }
         }
       `}</style>

@@ -9,6 +9,7 @@ import {
   ArrowUpRight,
   Github,
   Linkedin,
+  Instagram,
   MapPin,
   Moon,
   MoveUpRight,
@@ -242,18 +243,20 @@ export function CreativePortfolio() {
             </span>
             <div className="social-links">
               <a
-                href="https://github.com/25csdaksh"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Github size={16} /> GitHub
-              </a>
-              <a
                 href="https://www.linkedin.com/in/daksh-soni-7ab474372/"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={16} /> LinkedIn
+              </a>
+              <a
+                href="https://www.instagram.com/dakshsoni_005"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+              >
+                <Instagram size={16} /> Instagram
               </a>
             </div>
             <span>© 2026 Daksh Soni</span>

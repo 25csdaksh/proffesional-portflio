@@ -2727,124 +2727,76 @@ html[data-theme="light"] .contact-meta-card {
   flex-shrink: 0;
 }
 
-/* Modern GitHub & LinkedIn Logo Buttons */
-.modern-social-buttons-wrap {
+/* Modern LinkedIn & Instagram Icon Only Buttons */
+.contact-social-icons-bar {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 6px;
-  width: 100%;
+  margin-top: 10px;
 }
 
-.modern-social-btn {
+.social-icons-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.social-icons-cluster {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 14px;
+}
+
+.social-icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--card);
   border: 1px solid var(--card-border);
-  border-radius: 10px;
-  padding: 13px 18px;
   color: var(--foreground);
   text-decoration: none;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
-html[data-theme="light"] .modern-social-btn {
+html[data-theme="light"] .social-icon-btn {
   background: #ffffff;
   border-color: #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-.modern-social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+.social-icon-btn:hover {
+  transform: translateY(-3px) scale(1.05);
 }
 
-.github-modern-btn:hover {
-  border-color: rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.03);
+.social-icon-btn.linkedin-btn {
+  color: #0a66c2;
+  border-color: rgba(10, 102, 194, 0.3);
 }
 
-html[data-theme="light"] .github-modern-btn:hover {
-  border-color: #0f172a;
-  background: #f8fafc;
-}
-
-.linkedin-modern-btn:hover {
-  border-color: rgba(10, 102, 194, 0.6);
-  background: rgba(10, 102, 194, 0.05);
-}
-
-.social-btn-inner-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.social-brand-icon-box {
-  width: 40px;
-  height: 40px;
-  border-radius: 9px;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.modern-social-btn:hover .social-brand-icon-box {
-  transform: scale(1.08);
-}
-
-.github-icon-box {
-  background: rgba(255, 255, 255, 0.08);
-  color: #f3f4f6;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-html[data-theme="light"] .github-icon-box {
-  background: #0f172a;
+.social-icon-btn.linkedin-btn:hover {
+  background: #0a66c2;
   color: #ffffff;
-  border-color: #0f172a;
+  border-color: #0a66c2;
+  box-shadow: 0 8px 24px rgba(10, 102, 194, 0.45);
 }
 
-.linkedin-icon-box {
-  background: rgba(10, 102, 194, 0.15);
-  color: #0a66c2;
-  border: 1px solid rgba(10, 102, 194, 0.3);
+.social-icon-btn.instagram-btn {
+  color: #e1306c;
+  border-color: rgba(225, 48, 108, 0.3);
 }
 
-.social-btn-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.social-brand-name {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-  color: var(--foreground);
-}
-
-.social-brand-sub {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px;
-  color: var(--muted);
-}
-
-.social-btn-arrow-icon {
-  color: var(--muted);
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.modern-social-btn:hover .social-btn-arrow-icon {
-  color: var(--primary);
-  transform: translate(2px, -2px);
-}
-
-.linkedin-modern-btn:hover .social-btn-arrow-icon {
-  color: #0a66c2;
+.social-icon-btn.instagram-btn:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.45);
 }
 
 /* --- Right Column: Contact Form Card --- */

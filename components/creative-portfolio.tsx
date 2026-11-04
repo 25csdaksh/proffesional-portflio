@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState, type CSSProperties } from "react";
+import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 import { SkillsSection } from "@/components/skills-section";
 import { HomeProjectsSection } from "@/components/home-projects-section";
 import {
   ArrowDownRight,
   ArrowUpRight,
+  ArrowRight,
   Github,
   Linkedin,
   Instagram,
@@ -92,7 +94,7 @@ export function CreativePortfolio() {
         </a>
 
         <nav aria-label="Main navigation">
-          <a href="#about">About</a>
+          <Link href="/about">About</Link>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
@@ -238,6 +240,23 @@ export function CreativePortfolio() {
                 <Sparkles size={15} /> Currently curious about
               </span>
               <b>Data analytics · Software · The next big idea</b>
+            </div>
+
+            <div style={{ marginTop: "24px" }}>
+              <Link
+                href="/about"
+                className="button button-dark"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "8px",
+                  fontSize: "13px",
+                  padding: "10px 20px",
+                }}
+              >
+                <span>Read Full Story &amp; Philosophy</span>
+                <ArrowRight size={15} />
+              </Link>
             </div>
           </div>
         </div>

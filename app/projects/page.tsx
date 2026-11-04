@@ -80,7 +80,7 @@ export default function ProjectsPage() {
 
         <nav aria-label="Main navigation">
           <Link href="/">Home</Link>
-          <Link href="/#about">About</Link>
+          <Link href="/about">About</Link>
           <Link href="/#skills">Skills</Link>
           <Link
             href="/projects"

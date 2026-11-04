@@ -48,6 +48,11 @@ Engineered with **Next.js 16 (App Router)**, **React 19**, and **TypeScript**, t
 - **Persistent State:** Saves user theme preference across browser sessions with zero layout shift.
 - **Editorial Typography:** Georgia serif headlines paired with precise SFMono technical kicks.
 
+### 👤 Dedicated `/about` Journey Page
+- **In-Depth Story & Philosophy:** Narrative breakdown of Daksh's path from early C programming to engineering complex full-stack & AI systems at CHARUSAT.
+- **Core Philosophy Showcase:** *"I don't just want to write code. I want to build products people remember."*
+- **3 Engineering Pillars:** Product-first mindset, truth-grounded AI systems, and clean architectural scalability.
+
 ### 🛠️ Developer Skills Command Center
 - **30+ Vector Icons:** 100% official brand SVGs for languages, AI frameworks, databases, and DevOps tools.
 - **Interactive Matrix:** Category tab filtering (Frontend, Backend, AI/ML, Database, Tools) with smooth transitions.
@@ -170,3 +175,4 @@ npm start
 Designed & Engineered with ❤️ by **Daksh Soni** · © 2026 All Rights Reserved.
 
 </div>
+

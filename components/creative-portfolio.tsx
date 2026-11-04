@@ -18,10 +18,13 @@ import {
   Sparkles,
   Sun,
   Quote,
+  Menu,
+  X,
 } from "lucide-react";
 
 export function CreativePortfolio() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -93,7 +96,7 @@ export function CreativePortfolio() {
           ds<span>.</span>
         </a>
 
-        <nav aria-label="Main navigation">
+        <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/about">About</Link>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
@@ -114,8 +117,70 @@ export function CreativePortfolio() {
           <a className="nav-cta" href="mailto:dakshsoni1023@gmail.com">
             Let&apos;s talk <ArrowUpRight size={15} />
           </a>
+
+          <button
+            type="button"
+            className="mobile-nav-btn"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="mobile-nav-drawer" role="dialog" aria-modal="true">
+          <Link
+            href="/"
+            className="mobile-nav-link active"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Home</span>
+            <ArrowRight size={15} />
+          </Link>
+          <Link
+            href="/about"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>About Me</span>
+            <ArrowRight size={15} />
+          </Link>
+          <a
+            href="#skills"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Skills</span>
+            <ArrowRight size={15} />
+          </a>
+          <Link
+            href="/projects"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Projects</span>
+            <ArrowRight size={15} />
+          </Link>
+          <a
+            href="#contact"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Contact</span>
+            <ArrowRight size={15} />
+          </a>
+          <a
+            href="mailto:dakshson1023@gmail.com"
+            className="mobile-drawer-cta"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Let&apos;s talk <ArrowUpRight size={16} />
+          </a>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section id="home" className="hero">

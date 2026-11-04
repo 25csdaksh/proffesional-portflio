@@ -475,14 +475,38 @@ export function HomeProjectsSection() {
           }
         }
         @media (max-width: 680px) {
+          .no-photo-projects-section {
+            padding: 70px 0 80px;
+          }
+          .no-photo-projects-section .section-header-wrap {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 0 16px;
+            margin-bottom: 28px;
+          }
+          .no-photo-projects-section .btn-top-explore {
+            width: 100%;
+            justify-content: center;
+          }
           .no-photo-projects-section .info-cards-grid {
             grid-template-columns: 1fr;
             padding: 0 16px;
+            gap: 14px;
           }
-          .no-photo-projects-section .section-header-wrap,
+          .no-photo-projects-section .info-project-card {
+            padding: 18px 16px;
+          }
           .no-photo-projects-section .bottom-summary-banner {
-            padding-left: 16px;
-            padding-right: 16px;
+            margin: 24px 16px 0;
+            padding: 18px 16px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+          }
+          .no-photo-projects-section .btn-explore-catalog {
+            width: 100%;
+            justify-content: center;
           }
         }
       `}</style>

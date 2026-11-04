@@ -20,10 +20,13 @@ import {
   Wheat,
   Stethoscope,
   Code2,
+  Menu,
+  X,
 } from "lucide-react";
 
 export default function AboutPage() {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -1011,21 +1014,48 @@ export default function AboutPage() {
             position: static;
             max-width: 360px;
             margin: 0 auto;
+            width: 100%;
           }
           .featured-projects-grid {
             grid-template-columns: 1fr;
           }
           .about-main-container {
-            padding: 36px 20px 80px;
+            padding: 30px 18px 80px;
           }
           .about-page-wrap .site-nav {
-            padding: 16px 20px;
+            padding: 0 18px;
+            height: 66px;
           }
           .about-page-wrap .nav-links-row {
-            display: none;
+            display: none !important;
+          }
+          .about-page-wrap .mobile-nav-btn {
+            display: inline-flex !important;
           }
           .about-footer-banner {
-            padding: 26px 22px;
+            padding: 26px 20px;
+          }
+        }
+
+        @media (max-width: 540px) {
+          .about-name-hero {
+            font-size: clamp(32px, 8.5vw, 42px);
+          }
+          .about-page-wrap .btn-nav-talk {
+            display: none;
+          }
+          .profile-media-column {
+            max-width: 100%;
+          }
+          .profile-avatar-frame {
+            max-width: 100%;
+          }
+          .about-badges-row {
+            gap: 8px;
+          }
+          .badge-item {
+            padding: 6px 12px;
+            font-size: 11.5px;
           }
         }
       `}</style>
@@ -1036,7 +1066,7 @@ export default function AboutPage() {
           ds<span>.</span>
         </Link>
 
-        <nav className="nav-links-row" aria-label="Main Navigation">
+        <nav className="nav-links-row desktop-nav" aria-label="Main Navigation">
           <Link href="/" className="nav-link-item">
             Home
           </Link>
@@ -1063,11 +1093,74 @@ export default function AboutPage() {
           >
             {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
           </button>
+
           <Link href="/#contact" className="btn-nav-talk">
             Let&apos;s Talk
           </Link>
+
+          <button
+            type="button"
+            className="mobile-nav-btn"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="mobile-nav-drawer" role="dialog" aria-modal="true">
+          <Link
+            href="/"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Home</span>
+            <ArrowRight size={15} />
+          </Link>
+          <Link
+            href="/about"
+            className="mobile-nav-link active"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>About Me</span>
+            <ArrowRight size={15} />
+          </Link>
+          <Link
+            href="/#skills"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Skills</span>
+            <ArrowRight size={15} />
+          </Link>
+          <Link
+            href="/projects"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Projects</span>
+            <ArrowRight size={15} />
+          </Link>
+          <Link
+            href="/#contact"
+            className="mobile-nav-link"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <span>Contact</span>
+            <ArrowRight size={15} />
+          </Link>
+          <a
+            href="mailto:dakshsoni1023@gmail.com"
+            className="mobile-drawer-cta"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Let&apos;s talk <ArrowUpRight size={16} />
+          </a>
+        </div>
+      )}
 
       {/* Main Container */}
       <div className="about-main-container">

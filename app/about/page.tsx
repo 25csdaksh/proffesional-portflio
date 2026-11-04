@@ -15,7 +15,6 @@ import {
   Moon,
   Linkedin,
   Instagram,
-  Download,
   Quote,
   Layers,
   Wheat,
@@ -377,29 +376,6 @@ export default function AboutPage() {
           background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
           color: #ffffff;
           border-color: transparent;
-        }
-
-        .btn-download-resume {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 8px;
-          padding: 12px;
-          border-radius: 10px;
-          background: rgba(226, 194, 134, 0.08);
-          border: 1px solid rgba(226, 194, 134, 0.3);
-          color: var(--primary);
-          font-size: 12.5px;
-          font-weight: 700;
-          text-decoration: none;
-          transition: all 0.2s ease;
-        }
-
-        .btn-download-resume:hover {
-          background: var(--primary);
-          color: #090a0f;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
         }
 
         /* Introduction Content (Right Column) */
@@ -1021,16 +997,6 @@ export default function AboutPage() {
                 </a>
               </div>
             </div>
-
-            {/* Resume Action */}
-            <a
-              href="/Daksh_Soni_Resume.pdf"
-              download
-              className="btn-download-resume"
-            >
-              <Download size={15} />
-              <span>Download Résumé</span>
-            </a>
           </div>
 
           {/* RIGHT COLUMN: Name, Professional Title, Introduction & Core Philosophy */}

@@ -140,12 +140,8 @@ export function CreativePortfolio() {
             <a className="button button-dark" href="/projects">
               Explore my work <ArrowDownRight size={17} />
             </a>
-            <a
-              className="text-link"
-              href="/Daksh_Soni_Resume.pdf"
-              download
-            >
-              Download résumé <MoveUpRight size={15} />
+            <a className="text-link" href="#contact">
+              Let&apos;s talk <MoveUpRight size={15} />
             </a>
           </div>
 

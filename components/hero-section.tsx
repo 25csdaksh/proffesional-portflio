@@ -60,9 +60,12 @@ export function HeroSection() {
                 size="lg"
                 variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                asChild
               >
-                <Download className="mr-2 h-4 w-4" />
-                Download Resume
+                <a href="/projects">
+                  <ArrowDown className="mr-2 h-4 w-4" />
+                  View Projects
+                </a>
               </Button>
             </div>
 

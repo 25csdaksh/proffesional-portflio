@@ -259,10 +259,10 @@ export default function AboutPage() {
         .profile-photo-wrapper {
           position: relative;
           width: 100%;
-          aspect-ratio: 4 / 4.7;
-          border-radius: 12px;
+          aspect-ratio: 1 / 1;
+          border-radius: 14px;
           overflow: hidden;
-          background: #141724;
+          background: #090a0f;
         }
 
         html[data-theme="light"] .profile-photo-wrapper {
@@ -271,34 +271,30 @@ export default function AboutPage() {
 
         .profile-photo-img {
           object-fit: cover;
-          object-position: center 18%;
+          object-position: center center;
           transition: transform 0.4s ease;
         }
 
         .profile-photo-wrapper:hover .profile-photo-img {
-          transform: scale(1.03);
+          transform: scale(1.02);
         }
 
-        /* Status Badge on Photo */
-        .profile-badge-overlay {
-          position: absolute;
-          bottom: 12px;
-          left: 12px;
-          right: 12px;
-          background: rgba(9, 10, 15, 0.85);
-          backdrop-filter: blur(8px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 8px;
+        /* Status Strip below Photo */
+        .profile-card-substatus {
+          margin-top: 10px;
           padding: 8px 12px;
+          border-radius: 8px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid var(--border);
           display: flex;
           align-items: center;
           justify-content: space-between;
           font-size: 11.5px;
         }
 
-        html[data-theme="light"] .profile-badge-overlay {
-          background: rgba(255, 255, 255, 0.92);
-          border-color: rgba(0, 0, 0, 0.08);
+        html[data-theme="light"] .profile-card-substatus {
+          background: #f8fafc;
+          border-color: #e2e8f0;
         }
 
         .status-dot-pulse {
@@ -986,13 +982,13 @@ export default function AboutPage() {
                   priority
                   className="profile-photo-img"
                 />
-                <div className="profile-badge-overlay">
-                  <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                    <span className="status-dot-pulse" />
-                    <span className="badge-status-text">Available to build</span>
-                  </div>
-                  <span className="badge-location-text">Patan, Gujarat</span>
+              </div>
+              <div className="profile-card-substatus">
+                <div style={{ display: "flex", alignItems: "center", gap: "7px" }}>
+                  <span className="status-dot-pulse" />
+                  <span className="badge-status-text">Available to build</span>
                 </div>
+                <span className="badge-location-text">Patan, Gujarat</span>
               </div>
             </div>
 

@@ -130,16 +130,16 @@ export default function ProjectsPage() {
 
         <h1
           style={{
-            fontFamily: "Georgia, 'Times New Roman', serif",
+            fontFamily: "var(--font-heading), 'Outfit', sans-serif",
             fontSize: "clamp(42px, 6.5vw, 76px)",
             lineHeight: 1.05,
-            letterSpacing: "-2.5px",
+            letterSpacing: "-2px",
             margin: "18px 0 16px",
-            fontWeight: 400,
+            fontWeight: 700,
             color: "var(--foreground)",
           }}
         >
-          Things I&apos;ve <em>Built.</em>
+          Things I&apos;ve <em style={{ fontStyle: "normal", color: "var(--golden-elixir)" }}>Built.</em>
         </h1>
 
         <p

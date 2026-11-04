@@ -131,18 +131,18 @@ export function HomeProjectsSection() {
           padding: 0 32px;
         }
         .no-photo-projects-section .header-title-box h2 {
-          font-family: Georgia, 'Times New Roman', serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: clamp(38px, 5vw, 56px);
           line-height: 1.05;
-          letter-spacing: -2px;
+          letter-spacing: -1.5px;
           margin: 16px 0 12px;
-          font-weight: 400;
+          font-weight: 700;
           color: var(--foreground);
         }
         .no-photo-projects-section .header-title-box h2 em {
-          font-family: Georgia, serif;
-          font-style: italic;
-          color: var(--primary);
+          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-style: normal;
+          color: var(--golden-elixir);
         }
         .no-photo-projects-section .header-lead-desc {
           font-size: 14px;
@@ -157,9 +157,9 @@ export function HomeProjectsSection() {
           gap: 8px;
           padding: 10px 20px;
           border-radius: 9999px;
-          background: rgba(226, 194, 134, 0.08);
-          border: 1px solid rgba(226, 194, 134, 0.3);
-          color: var(--primary);
+          background: rgba(226, 186, 101, 0.1);
+          border: 1px solid rgba(226, 186, 101, 0.35);
+          color: var(--golden-elixir);
           font-size: 12px;
           font-weight: 600;
           text-decoration: none;
@@ -167,10 +167,19 @@ export function HomeProjectsSection() {
           white-space: nowrap;
         }
         .no-photo-projects-section .btn-top-explore:hover {
-          background: var(--primary);
-          color: #090a0f;
+          background: var(--golden-elixir);
+          color: var(--velvet-eclipse-dark);
           transform: translateY(-2px);
-          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
+          box-shadow: 0 4px 14px rgba(226, 186, 101, 0.3);
+        }
+        html[data-theme="light"] .no-photo-projects-section .btn-top-explore {
+          background: rgba(62, 26, 62, 0.08);
+          border-color: rgba(62, 26, 62, 0.25);
+          color: #3E1A3E;
+        }
+        html[data-theme="light"] .no-photo-projects-section .btn-top-explore:hover {
+          background: #3E1A3E;
+          color: #F4ECDF;
         }
         .no-photo-projects-section .info-cards-grid {
           max-width: 1400px;
@@ -197,20 +206,20 @@ export function HomeProjectsSection() {
           position: relative;
         }
         html[data-theme="light"] .no-photo-projects-section .info-project-card {
-          background: #ffffff;
-          border-color: #e2e8f0;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+          background: #FAF6F0;
+          border-color: #D2B19E;
+          box-shadow: 0 4px 14px rgba(62, 26, 62, 0.04);
         }
         .no-photo-projects-section .info-project-card:hover {
           transform: translateY(-4px);
-          border-color: rgba(226, 194, 134, 0.5);
-          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
-          background: #131724;
+          border-color: var(--golden-elixir);
+          box-shadow: 0 16px 36px rgba(36, 15, 36, 0.45);
+          background: #3E1A3E;
         }
         html[data-theme="light"] .no-photo-projects-section .info-project-card:hover {
-          background: #f8fafc;
-          border-color: var(--primary);
-          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+          background: #E6D4C6;
+          border-color: #3E1A3E;
+          box-shadow: 0 12px 28px rgba(62, 26, 62, 0.12);
         }
         .no-photo-projects-section .card-meta-bar {
           display: flex;
@@ -273,42 +282,48 @@ export function HomeProjectsSection() {
           gap: 8px;
         }
         .no-photo-projects-section .card-title-row h3 {
-          font-family: Georgia, 'Times New Roman', serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: 19px;
-          font-weight: 600;
+          font-weight: 700;
           letter-spacing: -0.3px;
           color: var(--foreground);
           margin: 0;
           line-height: 1.25;
         }
+        html[data-theme="light"] .no-photo-projects-section .card-title-row h3 {
+          color: #3E1A3E;
+        }
         .no-photo-projects-section .card-index-num {
-          font-family: Georgia, serif;
-          font-size: 14px;
-          color: var(--muted);
-          font-style: italic;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          font-size: 11px;
+          color: var(--golden-elixir);
+          font-weight: 600;
         }
         .no-photo-projects-section .card-role-subtitle {
           font-size: 11.5px;
           font-weight: 500;
-          color: var(--primary);
+          color: var(--golden-elixir);
           margin: 0;
           letter-spacing: 0.1px;
         }
+        html[data-theme="light"] .no-photo-projects-section .card-role-subtitle {
+          color: #8E7365;
+        }
         .no-photo-projects-section .one-two-line-box {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.06);
+          background: rgba(36, 15, 36, 0.5);
+          border: 1px solid rgba(213, 193, 220, 0.15);
           border-radius: 8px;
           padding: 11px 13px;
           margin: 4px 0 2px;
         }
         html[data-theme="light"] .no-photo-projects-section .one-two-line-box {
-          background: #f8fafc;
-          border-color: #e2e8f0;
+          background: #F4ECDF;
+          border-color: #D2B19E;
         }
         .no-photo-projects-section .one-two-line-box p {
           font-size: 12.5px;
           line-height: 1.6;
-          color: #94a3b8;
+          color: var(--sunlit-parchment);
           margin: 0;
           display: -webkit-box;
           -webkit-line-clamp: 2;
@@ -316,7 +331,7 @@ export function HomeProjectsSection() {
           overflow: hidden;
         }
         html[data-theme="light"] .no-photo-projects-section .one-two-line-box p {
-          color: #475569;
+          color: #392F25;
         }
         .no-photo-projects-section .card-tech-pills {
           display: flex;
@@ -329,14 +344,14 @@ export function HomeProjectsSection() {
           font-size: 9.5px;
           padding: 3px 7px;
           border-radius: 4px;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--card-border);
-          color: var(--muted);
+          background: rgba(213, 193, 220, 0.12);
+          border: 1px solid rgba(213, 193, 220, 0.2);
+          color: #F4ECDF;
         }
         html[data-theme="light"] .no-photo-projects-section .tech-pill {
-          background: #f1f5f9;
-          color: #475569;
-          border-color: #e2e8f0;
+          background: #E6D4C6;
+          color: #3E1A3E;
+          border-color: #D2B19E;
         }
         .no-photo-projects-section .card-actions-bar {
           display: flex;
@@ -350,8 +365,8 @@ export function HomeProjectsSection() {
           display: inline-flex;
           align-items: center;
           gap: 5px;
-          background: var(--primary);
-          color: #090a0f;
+          background: var(--golden-elixir);
+          color: var(--velvet-eclipse-dark);
           font-size: 11px;
           font-weight: 700;
           padding: 7px 12px;
@@ -360,7 +375,7 @@ export function HomeProjectsSection() {
           transition: all 0.2s ease;
         }
         .no-photo-projects-section .btn-live-link:hover {
-          background: #edd39a;
+          background: var(--golden-elixir-hover);
           transform: translateY(-1px);
         }
         .no-photo-projects-section .btn-specs-link {
@@ -373,14 +388,14 @@ export function HomeProjectsSection() {
           transition: color 0.2s ease;
         }
         .no-photo-projects-section .btn-specs-link:hover {
-          color: var(--primary);
+          color: var(--golden-elixir);
         }
         .no-photo-projects-section .bottom-summary-banner {
           max-width: 1400px;
           margin: 36px auto 0;
           padding: 20px 28px;
-          background: var(--card);
-          border: 1px solid var(--card-border);
+          background: #341734;
+          border: 1px solid #522752;
           border-radius: 10px;
           display: flex;
           align-items: center;
@@ -389,8 +404,8 @@ export function HomeProjectsSection() {
           flex-wrap: wrap;
         }
         html[data-theme="light"] .no-photo-projects-section .bottom-summary-banner {
-          background: #ffffff;
-          border-color: #e2e8f0;
+          background: #FAF6F0;
+          border-color: #D2B19E;
         }
         .no-photo-projects-section .summary-text-group {
           display: flex;
@@ -401,7 +416,7 @@ export function HomeProjectsSection() {
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
           font-size: 10px;
           letter-spacing: 1.2px;
-          color: var(--primary);
+          color: var(--golden-elixir);
           font-weight: 700;
         }
         .no-photo-projects-section .summary-lead {
@@ -409,12 +424,15 @@ export function HomeProjectsSection() {
           color: var(--muted);
           margin: 0;
         }
+        html[data-theme="light"] .no-photo-projects-section .summary-lead {
+          color: #392F25;
+        }
         .no-photo-projects-section .btn-explore-catalog {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: var(--primary);
-          color: #090a0f;
+          background: var(--golden-elixir);
+          color: var(--velvet-eclipse-dark);
           font-size: 12px;
           font-weight: 700;
           padding: 10px 20px;
@@ -424,9 +442,9 @@ export function HomeProjectsSection() {
           white-space: nowrap;
         }
         .no-photo-projects-section .btn-explore-catalog:hover {
-          background: #edd39a;
+          background: var(--golden-elixir-hover);
           transform: translateY(-2px);
-          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
+          box-shadow: 0 4px 14px rgba(226, 186, 101, 0.3);
         }
         @media (max-width: 1240px) {
           .no-photo-projects-section .info-cards-grid {

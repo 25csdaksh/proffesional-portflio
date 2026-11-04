@@ -113,7 +113,7 @@ export default function AboutPage() {
         }
 
         .about-page-wrap .wordmark {
-          font-family: Georgia, 'Times New Roman', serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: 24px;
           font-weight: 700;
           color: var(--foreground);
@@ -122,7 +122,7 @@ export default function AboutPage() {
         }
 
         .about-page-wrap .wordmark span {
-          color: var(--primary);
+          color: var(--golden-elixir);
         }
 
         .about-page-wrap .nav-links-row {
@@ -145,8 +145,8 @@ export default function AboutPage() {
         }
 
         .about-page-wrap .nav-link-item.active {
-          color: var(--primary);
-          border-bottom: 1.5px solid var(--primary);
+          color: var(--golden-elixir);
+          border-bottom: 1.5px solid var(--golden-elixir);
           padding-bottom: 2px;
         }
 
@@ -170,16 +170,16 @@ export default function AboutPage() {
         }
 
         .about-page-wrap .theme-toggle-btn:hover {
-          border-color: var(--primary);
-          color: var(--primary);
+          border-color: var(--golden-elixir);
+          color: var(--golden-elixir);
           transform: rotate(15deg);
         }
 
         .about-page-wrap .btn-nav-talk {
           padding: 8px 18px;
           border-radius: 9999px;
-          background: var(--primary);
-          color: #090a0f;
+          background: var(--golden-elixir);
+          color: var(--velvet-eclipse-dark);
           font-size: 12.5px;
           font-weight: 700;
           text-decoration: none;
@@ -187,7 +187,7 @@ export default function AboutPage() {
         }
 
         .about-page-wrap .btn-nav-talk:hover {
-          background: #edd39a;
+          background: var(--golden-elixir-hover);
           transform: translateY(-1px);
         }
 
@@ -236,23 +236,23 @@ export default function AboutPage() {
         }
 
         .profile-image-card {
-          background: var(--card);
-          border: 1px solid var(--card-border);
+          background: #341734;
+          border: 1px solid #522752;
           border-radius: 18px;
           padding: 14px;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
         }
 
         html[data-theme="light"] .profile-image-card {
-          background: #ffffff;
-          border-color: #e2e8f0;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+          background: #FAF6F0;
+          border-color: #D2B19E;
+          box-shadow: 0 12px 30px rgba(62, 26, 62, 0.08);
         }
 
         .profile-image-card:hover {
           transform: translateY(-3px);
-          border-color: rgba(226, 194, 134, 0.5);
+          border-color: var(--golden-elixir);
         }
 
         .profile-photo-wrapper {
@@ -261,11 +261,11 @@ export default function AboutPage() {
           aspect-ratio: 1 / 1;
           border-radius: 14px;
           overflow: hidden;
-          background: #090a0f;
+          background: #240F24;
         }
 
         html[data-theme="light"] .profile-photo-wrapper {
-          background: #f1f5f9;
+          background: #E6D4C6;
         }
 
         .profile-photo-img {
@@ -283,8 +283,8 @@ export default function AboutPage() {
           margin-top: 10px;
           padding: 8px 12px;
           border-radius: 8px;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid var(--border);
+          background: rgba(36, 15, 36, 0.6);
+          border: 1px solid rgba(213, 193, 220, 0.15);
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -292,8 +292,8 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-card-substatus {
-          background: #f8fafc;
-          border-color: #e2e8f0;
+          background: #FAF6F0;
+          border-color: #D2B19E;
         }
 
         .status-dot-pulse {
@@ -310,6 +310,10 @@ export default function AboutPage() {
           color: var(--foreground);
         }
 
+        html[data-theme="light"] .badge-status-text {
+          color: #3E1A3E;
+        }
+
         .badge-location-text {
           color: var(--muted);
           font-size: 11px;
@@ -317,8 +321,8 @@ export default function AboutPage() {
 
         /* Profile Actions Below Image */
         .profile-social-dock {
-          background: var(--card);
-          border: 1px solid var(--card-border);
+          background: #341734;
+          border: 1px solid #522752;
           border-radius: 12px;
           padding: 14px 18px;
           display: flex;
@@ -328,8 +332,8 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-social-dock {
-          background: #ffffff;
-          border-color: #e2e8f0;
+          background: #FAF6F0;
+          border-color: #D2B19E;
         }
 
         .profile-social-dock .meta-location {
@@ -352,14 +356,21 @@ export default function AboutPage() {
           border-radius: 8px;
           display: grid;
           place-items: center;
-          border: 1px solid var(--card-border);
+          border: 1px solid #522752;
+          background: #240F24;
           color: var(--foreground);
           text-decoration: none;
           transition: all 0.2s ease;
         }
 
+        html[data-theme="light"] .dock-icon-btn {
+          background: #E6D4C6;
+          border-color: #D2B19E;
+          color: #3E1A3E;
+        }
+
         .dock-icon-btn.linkedin {
-          color: #0a66c2;
+          color: #D5C1DC;
         }
 
         .dock-icon-btn.linkedin:hover {
@@ -369,7 +380,7 @@ export default function AboutPage() {
         }
 
         .dock-icon-btn.instagram {
-          color: #e1306c;
+          color: var(--golden-elixir);
         }
 
         .dock-icon-btn.instagram:hover {
@@ -393,31 +404,40 @@ export default function AboutPage() {
           font-size: 11px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          color: var(--primary);
+          color: var(--golden-elixir);
           font-weight: 700;
         }
 
         .profile-name-title {
-          font-family: Georgia, 'Times New Roman', serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: clamp(42px, 5vw, 62px);
-          font-weight: 400;
-          letter-spacing: -2px;
+          font-weight: 700;
+          letter-spacing: -1.5px;
           margin: 0;
           line-height: 1.05;
           color: var(--foreground);
         }
 
+        html[data-theme="light"] .profile-name-title {
+          color: #3E1A3E;
+        }
+
         .profile-name-title span {
-          color: var(--primary);
+          color: var(--golden-elixir);
         }
 
         .profile-professional-subtitle {
+          font-family: var(--font-body), sans-serif;
           font-size: 17px;
           line-height: 1.45;
           font-weight: 600;
-          color: var(--primary);
+          color: var(--golden-elixir);
           margin: -8px 0 0;
           letter-spacing: -0.2px;
+        }
+
+        html[data-theme="light"] .profile-professional-subtitle {
+          color: #8E7365;
         }
 
         .profile-bio-paragraphs {
@@ -433,12 +453,16 @@ export default function AboutPage() {
           color: var(--muted);
         }
 
+        html[data-theme="light"] .profile-bio-paragraphs p {
+          color: #392F25;
+        }
+
         /* Core Philosophy Accent Card */
         .about-philosophy-quote {
           margin: 10px 0 4px;
           padding: 22px 26px;
-          background: rgba(226, 194, 134, 0.05);
-          border-left: 3px solid var(--primary);
+          background: rgba(226, 186, 101, 0.06);
+          border-left: 3px solid var(--golden-elixir);
           border-top: 1px solid var(--card-border);
           border-right: 1px solid var(--card-border);
           border-bottom: 1px solid var(--card-border);
@@ -450,14 +474,14 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .about-philosophy-quote {
-          background: #fbf8f2;
-          border-color: #e5ded3;
-          border-left-color: var(--primary);
+          background: #FAF6F0;
+          border-color: #D2B19E;
+          border-left-color: var(--golden-elixir);
         }
 
         .about-philosophy-quote:hover {
           transform: translateX(4px);
-          background: rgba(226, 194, 134, 0.08);
+          background: rgba(226, 186, 101, 0.1);
         }
 
         .quote-kicker {
@@ -468,17 +492,21 @@ export default function AboutPage() {
           font-size: 10.5px;
           letter-spacing: 1.5px;
           text-transform: uppercase;
-          color: var(--primary);
+          color: var(--golden-elixir);
           font-weight: 700;
         }
 
         .quote-body {
-          font-family: Georgia, 'Times New Roman', serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: 18px;
           line-height: 1.5;
-          font-style: italic;
+          font-weight: 500;
           color: var(--foreground);
           margin: 0;
+        }
+
+        html[data-theme="light"] .quote-body {
+          color: #3E1A3E;
         }
 
         .quote-author-row {
@@ -495,13 +523,17 @@ export default function AboutPage() {
           font-weight: 600;
         }
 
+        html[data-theme="light"] .quote-author-row b {
+          color: #3E1A3E;
+        }
+
         .quote-author-row .dot {
-          color: var(--primary);
+          color: var(--golden-elixir);
         }
 
         .quote-author-row em {
           font-style: normal;
-          color: var(--primary);
+          color: var(--golden-elixir);
         }
 
         /* Interest Pills Strip */
@@ -517,15 +549,15 @@ export default function AboutPage() {
           font-size: 11px;
           padding: 5px 12px;
           border-radius: 9999px;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--card-border);
-          color: var(--muted);
+          background: rgba(213, 193, 220, 0.12);
+          border: 1px solid rgba(213, 193, 220, 0.2);
+          color: var(--sunlit-parchment);
         }
 
         html[data-theme="light"] .interest-tag-pill {
-          background: #f1f5f9;
-          color: #475569;
-          border-color: #e2e8f0;
+          background: #E6D4C6;
+          color: #3E1A3E;
+          border-color: #D2B19E;
         }
 
         /* Subtle Section Divider */
@@ -565,17 +597,21 @@ export default function AboutPage() {
         }
 
         .featured-heading-group h2 {
-          font-family: Georgia, 'Times New Roman', serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: clamp(30px, 3.8vw, 42px);
           letter-spacing: -1px;
           margin: 0;
-          font-weight: 400;
+          font-weight: 700;
           color: var(--foreground);
         }
 
+        html[data-theme="light"] .featured-heading-group h2 {
+          color: #3E1A3E;
+        }
+
         .featured-heading-group h2 em {
-          font-style: italic;
-          color: var(--primary);
+          font-style: normal;
+          color: var(--golden-elixir);
         }
 
         .featured-lead-desc {
@@ -586,15 +622,19 @@ export default function AboutPage() {
           line-height: 1.6;
         }
 
+        html[data-theme="light"] .featured-lead-desc {
+          color: #392F25;
+        }
+
         .btn-view-all-projects {
           display: inline-flex;
           align-items: center;
           gap: 8px;
           padding: 10px 20px;
           border-radius: 9999px;
-          background: rgba(226, 194, 134, 0.08);
-          border: 1px solid rgba(226, 194, 134, 0.3);
-          color: var(--primary);
+          background: rgba(226, 186, 101, 0.1);
+          border: 1px solid rgba(226, 186, 101, 0.35);
+          color: var(--golden-elixir);
           font-size: 12.5px;
           font-weight: 600;
           text-decoration: none;
@@ -603,10 +643,21 @@ export default function AboutPage() {
         }
 
         .btn-view-all-projects:hover {
-          background: var(--primary);
-          color: #090a0f;
+          background: var(--golden-elixir);
+          color: var(--velvet-eclipse-dark);
           transform: translateY(-2px);
-          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
+          box-shadow: 0 4px 14px rgba(226, 186, 101, 0.3);
+        }
+
+        html[data-theme="light"] .btn-view-all-projects {
+          background: rgba(62, 26, 62, 0.08);
+          border-color: rgba(62, 26, 62, 0.25);
+          color: #3E1A3E;
+        }
+
+        html[data-theme="light"] .btn-view-all-projects:hover {
+          background: #3E1A3E;
+          color: #F4ECDF;
         }
 
         /* 3-Card Responsive Grid */
@@ -617,8 +668,8 @@ export default function AboutPage() {
         }
 
         .about-project-card {
-          background: var(--card);
-          border: 1px solid var(--card-border);
+          background: #341734;
+          border: 1px solid #522752;
           border-radius: 14px;
           padding: 24px;
           display: flex;
@@ -627,25 +678,28 @@ export default function AboutPage() {
           gap: 18px;
           transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
                       border-color 0.25s ease,
-                      box-shadow 0.25s ease;
+                      box-shadow 0.25s ease,
+                      background 0.25s ease;
           position: relative;
         }
 
         html[data-theme="light"] .about-project-card {
-          background: #ffffff;
-          border-color: #e2e8f0;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+          background: #FAF6F0;
+          border-color: #D2B19E;
+          box-shadow: 0 4px 14px rgba(62, 26, 62, 0.04);
         }
 
         .about-project-card:hover {
           transform: translateY(-4px);
-          border-color: rgba(226, 194, 134, 0.5);
-          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+          border-color: var(--golden-elixir);
+          background: #3E1A3E;
+          box-shadow: 0 16px 36px rgba(36, 15, 36, 0.5);
         }
 
         html[data-theme="light"] .about-project-card:hover {
-          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-          border-color: var(--primary);
+          background: #E6D4C6;
+          border-color: #3E1A3E;
+          box-shadow: 0 12px 28px rgba(62, 26, 62, 0.12);
         }
 
         .project-thumbnail-box {
@@ -653,13 +707,14 @@ export default function AboutPage() {
           height: 140px;
           border-radius: 9px;
           overflow: hidden;
-          background: #141724;
+          background: #240F24;
           position: relative;
-          border: 1px solid var(--border);
+          border: 1px solid #522752;
         }
 
         html[data-theme="light"] .project-thumbnail-box {
-          background: #f8fafc;
+          background: #E6D4C6;
+          border-color: #D2B19E;
         }
 
         .project-thumbnail-img {
@@ -687,17 +742,21 @@ export default function AboutPage() {
           font-size: 10px;
           letter-spacing: 0.8px;
           text-transform: uppercase;
-          color: var(--primary);
+          color: var(--golden-elixir);
           font-weight: 700;
         }
 
         .project-title {
-          font-family: Georgia, 'Times New Roman', serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: 21px;
-          font-weight: 600;
+          font-weight: 700;
           color: var(--foreground);
           margin: 6px 0 0;
           letter-spacing: -0.3px;
+        }
+
+        html[data-theme="light"] .project-title {
+          color: #3E1A3E;
         }
 
         .project-desc-text {
@@ -709,6 +768,10 @@ export default function AboutPage() {
           -webkit-line-clamp: 3;
           -webkit-box-orient: vertical;
           overflow: hidden;
+        }
+
+        html[data-theme="light"] .project-desc-text {
+          color: #392F25;
         }
 
         .project-tech-tags {
@@ -724,15 +787,15 @@ export default function AboutPage() {
           font-size: 9.5px;
           padding: 3px 8px;
           border-radius: 4px;
-          background: rgba(255, 255, 255, 0.04);
-          border: 1px solid var(--card-border);
-          color: var(--muted);
+          background: rgba(213, 193, 220, 0.12);
+          border: 1px solid rgba(213, 193, 220, 0.2);
+          color: #F4ECDF;
         }
 
         html[data-theme="light"] .tech-pill-badge {
-          background: #f1f5f9;
-          color: #475569;
-          border-color: #e2e8f0;
+          background: #E6D4C6;
+          color: #3E1A3E;
+          border-color: #D2B19E;
         }
 
         .project-card-footer {
@@ -755,11 +818,11 @@ export default function AboutPage() {
         }
 
         .project-action-link:hover {
-          color: var(--primary);
+          color: var(--golden-elixir);
         }
 
         .project-action-link.primary-action {
-          color: var(--primary);
+          color: var(--golden-elixir);
           font-weight: 700;
         }
 
@@ -767,8 +830,8 @@ export default function AboutPage() {
         .about-footer-banner {
           margin-top: 60px;
           padding: 36px 40px;
-          background: var(--card);
-          border: 1px solid var(--card-border);
+          background: #341734;
+          border: 1px solid #522752;
           border-radius: 14px;
           display: flex;
           align-items: center;
@@ -778,22 +841,31 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .about-footer-banner {
-          background: #ffffff;
-          border-color: #e2e8f0;
+          background: #FAF6F0;
+          border-color: #D2B19E;
         }
 
         .footer-banner-text h3 {
-          font-family: Georgia, serif;
+          font-family: var(--font-heading), 'Outfit', sans-serif;
           font-size: 24px;
+          font-weight: 700;
           margin: 0 0 6px;
           color: var(--foreground);
           letter-spacing: -0.4px;
+        }
+
+        html[data-theme="light"] .footer-banner-text h3 {
+          color: #3E1A3E;
         }
 
         .footer-banner-text p {
           margin: 0;
           font-size: 14px;
           color: var(--muted);
+        }
+
+        html[data-theme="light"] .footer-banner-text p {
+          color: #392F25;
         }
 
         .footer-banner-actions {
@@ -808,8 +880,8 @@ export default function AboutPage() {
           gap: 8px;
           padding: 12px 24px;
           border-radius: 8px;
-          background: var(--primary);
-          color: #090a0f;
+          background: var(--golden-elixir);
+          color: var(--velvet-eclipse-dark);
           font-size: 13px;
           font-weight: 700;
           text-decoration: none;
@@ -817,9 +889,9 @@ export default function AboutPage() {
         }
 
         .btn-talk-action:hover {
-          background: #edd39a;
+          background: var(--golden-elixir-hover);
           transform: translateY(-2px);
-          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.3);
+          box-shadow: 0 4px 14px rgba(226, 186, 101, 0.35);
         }
 
         /* Site Footer */

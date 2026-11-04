@@ -130,7 +130,7 @@ export default function ProjectsPage() {
 
         <h1
           style={{
-            fontFamily: "var(--font-heading), 'Outfit', sans-serif",
+            fontFamily: "var(--font-heading), 'Sora', sans-serif",
             fontSize: "clamp(42px, 6.5vw, 76px)",
             lineHeight: 1.05,
             letterSpacing: "-2px",

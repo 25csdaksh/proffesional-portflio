@@ -108,12 +108,12 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .about-page-wrap .site-nav {
-          background: rgba(251, 248, 242, 0.9);
-          border-color: #e5ded3;
+          background: rgba(244, 237, 247, 0.9);
+          border-color: #E2D5E8;
         }
 
         .about-page-wrap .wordmark {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: 24px;
           font-weight: 700;
           color: var(--foreground);
@@ -245,9 +245,9 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-image-card {
-          background: #FAF6F0;
-          border-color: #D2B19E;
-          box-shadow: 0 12px 30px rgba(62, 26, 62, 0.08);
+          background: #FFFFFF;
+          border-color: #E2D5E8;
+          box-shadow: 0 16px 40px rgba(92, 50, 104, 0.08);
         }
 
         .profile-image-card:hover {
@@ -265,7 +265,7 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-photo-wrapper {
-          background: #E6D4C6;
+          background: #E5D5EB;
         }
 
         .profile-photo-img {
@@ -292,8 +292,8 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-card-substatus {
-          background: #FAF6F0;
-          border-color: #D2B19E;
+          background: #F4EDF7;
+          border-color: #E2D5E8;
         }
 
         .status-dot-pulse {
@@ -319,6 +319,10 @@ export default function AboutPage() {
           font-size: 11px;
         }
 
+        html[data-theme="light"] .badge-location-text {
+          color: #766579;
+        }
+
         /* Profile Actions Below Image */
         .profile-social-dock {
           background: #341734;
@@ -332,8 +336,9 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-social-dock {
-          background: #FAF6F0;
-          border-color: #D2B19E;
+          background: #FFFFFF;
+          border-color: #E2D5E8;
+          box-shadow: 0 4px 14px rgba(92, 50, 104, 0.04);
         }
 
         .profile-social-dock .meta-location {
@@ -342,6 +347,10 @@ export default function AboutPage() {
           gap: 6px;
           font-size: 12px;
           color: var(--muted);
+        }
+
+        html[data-theme="light"] .profile-social-dock .meta-location {
+          color: #766579;
         }
 
         .profile-social-dock .social-icons-cluster {
@@ -364,8 +373,8 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .dock-icon-btn {
-          background: #E6D4C6;
-          border-color: #D2B19E;
+          background: #F4EDF7;
+          border-color: #E2D5E8;
           color: #3E1A3E;
         }
 
@@ -408,8 +417,12 @@ export default function AboutPage() {
           font-weight: 700;
         }
 
+        html[data-theme="light"] .profile-kicker {
+          color: #5C3268;
+        }
+
         .profile-name-title {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: clamp(42px, 5vw, 62px);
           font-weight: 700;
           letter-spacing: -1.5px;
@@ -426,6 +439,10 @@ export default function AboutPage() {
           color: var(--golden-elixir);
         }
 
+        html[data-theme="light"] .profile-name-title span {
+          color: #5C3268;
+        }
+
         .profile-professional-subtitle {
           font-family: var(--font-body), sans-serif;
           font-size: 17px;
@@ -437,7 +454,7 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-professional-subtitle {
-          color: #8E7365;
+          color: #5C3268;
         }
 
         .profile-bio-paragraphs {
@@ -454,7 +471,7 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .profile-bio-paragraphs p {
-          color: #392F25;
+          color: #766579;
         }
 
         /* Core Philosophy Accent Card */
@@ -474,14 +491,20 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .about-philosophy-quote {
-          background: #FAF6F0;
-          border-color: #D2B19E;
-          border-left-color: var(--golden-elixir);
+          background: #FFFFFF;
+          border-color: #E2D5E8;
+          border-left-color: #5C3268;
+          box-shadow: 0 4px 16px rgba(92, 50, 104, 0.05);
         }
 
         .about-philosophy-quote:hover {
           transform: translateX(4px);
           background: rgba(226, 186, 101, 0.1);
+        }
+
+        html[data-theme="light"] .about-philosophy-quote:hover {
+          background: #FAF7FB;
+          border-left-color: #E2BA65;
         }
 
         .quote-kicker {
@@ -496,8 +519,12 @@ export default function AboutPage() {
           font-weight: 700;
         }
 
+        html[data-theme="light"] .quote-kicker {
+          color: #5C3268;
+        }
+
         .quote-body {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: 18px;
           line-height: 1.5;
           font-weight: 500;
@@ -525,6 +552,10 @@ export default function AboutPage() {
 
         html[data-theme="light"] .quote-author-row b {
           color: #3E1A3E;
+        }
+
+        html[data-theme="light"] .quote-author-row {
+          color: #766579;
         }
 
         .quote-author-row .dot {
@@ -555,9 +586,9 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .interest-tag-pill {
-          background: #E6D4C6;
-          color: #3E1A3E;
-          border-color: #D2B19E;
+          background: #E5D5EB;
+          color: #5C3268;
+          border-color: #E2D5E8;
         }
 
         /* Subtle Section Divider */
@@ -597,7 +628,7 @@ export default function AboutPage() {
         }
 
         .featured-heading-group h2 {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: clamp(30px, 3.8vw, 42px);
           letter-spacing: -1px;
           margin: 0;
@@ -614,6 +645,10 @@ export default function AboutPage() {
           color: var(--golden-elixir);
         }
 
+        html[data-theme="light"] .featured-heading-group h2 em {
+          color: #5C3268;
+        }
+
         .featured-lead-desc {
           margin: 0;
           font-size: 14px;
@@ -623,7 +658,7 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .featured-lead-desc {
-          color: #392F25;
+          color: #766579;
         }
 
         .btn-view-all-projects {
@@ -650,14 +685,14 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .btn-view-all-projects {
-          background: rgba(62, 26, 62, 0.08);
-          border-color: rgba(62, 26, 62, 0.25);
-          color: #3E1A3E;
+          background: #E5D5EB;
+          border-color: #E2D5E8;
+          color: #5C3268;
         }
 
         html[data-theme="light"] .btn-view-all-projects:hover {
-          background: #3E1A3E;
-          color: #F4ECDF;
+          background: #5C3268;
+          color: #FFFFFF;
         }
 
         /* 3-Card Responsive Grid */
@@ -684,9 +719,9 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .about-project-card {
-          background: #FAF6F0;
-          border-color: #D2B19E;
-          box-shadow: 0 4px 14px rgba(62, 26, 62, 0.04);
+          background: #FFFFFF;
+          border-color: #E2D5E8;
+          box-shadow: 0 4px 18px rgba(92, 50, 104, 0.05);
         }
 
         .about-project-card:hover {
@@ -697,9 +732,9 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .about-project-card:hover {
-          background: #E6D4C6;
-          border-color: #3E1A3E;
-          box-shadow: 0 12px 28px rgba(62, 26, 62, 0.12);
+          background: #FAF7FB;
+          border-color: #5C3268;
+          box-shadow: 0 16px 36px rgba(92, 50, 104, 0.12);
         }
 
         .project-thumbnail-box {
@@ -713,8 +748,8 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .project-thumbnail-box {
-          background: #E6D4C6;
-          border-color: #D2B19E;
+          background: #E5D5EB;
+          border-color: #E2D5E8;
         }
 
         .project-thumbnail-img {
@@ -746,8 +781,12 @@ export default function AboutPage() {
           font-weight: 700;
         }
 
+        html[data-theme="light"] .project-domain-pill {
+          color: #5C3268;
+        }
+
         .project-title {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: 21px;
           font-weight: 700;
           color: var(--foreground);
@@ -771,7 +810,7 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .project-desc-text {
-          color: #392F25;
+          color: #766579;
         }
 
         .project-tech-tags {
@@ -793,9 +832,9 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .tech-pill-badge {
-          background: #E6D4C6;
-          color: #3E1A3E;
-          border-color: #D2B19E;
+          background: #E5D5EB;
+          color: #5C3268;
+          border-color: #E2D5E8;
         }
 
         .project-card-footer {
@@ -804,6 +843,10 @@ export default function AboutPage() {
           display: flex;
           align-items: center;
           justify-content: space-between;
+        }
+
+        html[data-theme="light"] .project-card-footer {
+          border-top-color: #E2D5E8;
         }
 
         .project-action-link {
@@ -826,6 +869,15 @@ export default function AboutPage() {
           font-weight: 700;
         }
 
+        html[data-theme="light"] .project-action-link {
+          color: #3E1A3E;
+        }
+
+        html[data-theme="light"] .project-action-link:hover,
+        html[data-theme="light"] .project-action-link.primary-action {
+          color: #5C3268;
+        }
+
         /* Bottom Callout Section */
         .about-footer-banner {
           margin-top: 60px;
@@ -841,12 +893,13 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .about-footer-banner {
-          background: #FAF6F0;
-          border-color: #D2B19E;
+          background: #FFFFFF;
+          border-color: #E2D5E8;
+          box-shadow: 0 8px 30px rgba(92, 50, 104, 0.05);
         }
 
         .footer-banner-text h3 {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: 24px;
           font-weight: 700;
           margin: 0 0 6px;
@@ -865,7 +918,7 @@ export default function AboutPage() {
         }
 
         html[data-theme="light"] .footer-banner-text p {
-          color: #392F25;
+          color: #766579;
         }
 
         .footer-banner-actions {
@@ -892,6 +945,16 @@ export default function AboutPage() {
           background: var(--golden-elixir-hover);
           transform: translateY(-2px);
           box-shadow: 0 4px 14px rgba(226, 186, 101, 0.35);
+        }
+
+        html[data-theme="light"] .btn-talk-action {
+          background: #5C3268;
+          color: #FFFFFF;
+        }
+
+        html[data-theme="light"] .btn-talk-action:hover {
+          background: #3E1A3E;
+          box-shadow: 0 4px 14px rgba(92, 50, 104, 0.25);
         }
 
         /* Site Footer */

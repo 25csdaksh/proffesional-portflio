@@ -126,8 +126,8 @@ export function CreativePortfolio() {
           </div>
 
           <h1>
-            Daksh<br />
-            <span>Soni.</span>
+            <span className="hero-name-first">Daksh</span><br />
+            <span className="hero-name-last">Soni<span className="hero-name-dot">.</span></span>
           </h1>
 
           <p className="hero-intro">

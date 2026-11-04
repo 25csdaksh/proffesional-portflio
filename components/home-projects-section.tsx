@@ -131,7 +131,7 @@ export function HomeProjectsSection() {
           padding: 0 32px;
         }
         .no-photo-projects-section .header-title-box h2 {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: clamp(38px, 5vw, 56px);
           line-height: 1.05;
           letter-spacing: -1.5px;
@@ -140,7 +140,7 @@ export function HomeProjectsSection() {
           color: var(--foreground);
         }
         .no-photo-projects-section .header-title-box h2 em {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-style: normal;
           color: var(--golden-elixir);
         }
@@ -173,13 +173,13 @@ export function HomeProjectsSection() {
           box-shadow: 0 4px 14px rgba(226, 186, 101, 0.3);
         }
         html[data-theme="light"] .no-photo-projects-section .btn-top-explore {
-          background: rgba(62, 26, 62, 0.08);
-          border-color: rgba(62, 26, 62, 0.25);
-          color: #3E1A3E;
+          background: #E5D5EB;
+          border-color: #E2D5E8;
+          color: #5C3268;
         }
         html[data-theme="light"] .no-photo-projects-section .btn-top-explore:hover {
-          background: #3E1A3E;
-          color: #F4ECDF;
+          background: #5C3268;
+          color: #FFFFFF;
         }
         .no-photo-projects-section .info-cards-grid {
           max-width: 1400px;
@@ -206,9 +206,9 @@ export function HomeProjectsSection() {
           position: relative;
         }
         html[data-theme="light"] .no-photo-projects-section .info-project-card {
-          background: #FAF6F0;
-          border-color: #D2B19E;
-          box-shadow: 0 4px 14px rgba(62, 26, 62, 0.04);
+          background: #FFFFFF;
+          border-color: #E2D5E8;
+          box-shadow: 0 4px 18px rgba(92, 50, 104, 0.05);
         }
         .no-photo-projects-section .info-project-card:hover {
           transform: translateY(-4px);
@@ -217,9 +217,9 @@ export function HomeProjectsSection() {
           background: #3E1A3E;
         }
         html[data-theme="light"] .no-photo-projects-section .info-project-card:hover {
-          background: #E6D4C6;
-          border-color: #3E1A3E;
-          box-shadow: 0 12px 28px rgba(62, 26, 62, 0.12);
+          background: #FAF7FB;
+          border-color: #5C3268;
+          box-shadow: 0 16px 36px rgba(92, 50, 104, 0.12);
         }
         .no-photo-projects-section .card-meta-bar {
           display: flex;
@@ -282,7 +282,7 @@ export function HomeProjectsSection() {
           gap: 8px;
         }
         .no-photo-projects-section .card-title-row h3 {
-          font-family: var(--font-heading), 'Outfit', sans-serif;
+          font-family: var(--font-heading), 'Sora', sans-serif;
           font-size: 19px;
           font-weight: 700;
           letter-spacing: -0.3px;
@@ -307,7 +307,7 @@ export function HomeProjectsSection() {
           letter-spacing: 0.1px;
         }
         html[data-theme="light"] .no-photo-projects-section .card-role-subtitle {
-          color: #8E7365;
+          color: #5C3268;
         }
         .no-photo-projects-section .one-two-line-box {
           background: rgba(36, 15, 36, 0.5);
@@ -317,8 +317,8 @@ export function HomeProjectsSection() {
           margin: 4px 0 2px;
         }
         html[data-theme="light"] .no-photo-projects-section .one-two-line-box {
-          background: #F4ECDF;
-          border-color: #D2B19E;
+          background: #F4EDF7;
+          border-color: #E2D5E8;
         }
         .no-photo-projects-section .one-two-line-box p {
           font-size: 12.5px;
@@ -331,7 +331,7 @@ export function HomeProjectsSection() {
           overflow: hidden;
         }
         html[data-theme="light"] .no-photo-projects-section .one-two-line-box p {
-          color: #392F25;
+          color: #766579;
         }
         .no-photo-projects-section .card-tech-pills {
           display: flex;
@@ -349,9 +349,9 @@ export function HomeProjectsSection() {
           color: #F4ECDF;
         }
         html[data-theme="light"] .no-photo-projects-section .tech-pill {
-          background: #E6D4C6;
-          color: #3E1A3E;
-          border-color: #D2B19E;
+          background: #E5D5EB;
+          color: #5C3268;
+          border-color: #E2D5E8;
         }
         .no-photo-projects-section .card-actions-bar {
           display: flex;
@@ -378,6 +378,13 @@ export function HomeProjectsSection() {
           background: var(--golden-elixir-hover);
           transform: translateY(-1px);
         }
+        html[data-theme="light"] .no-photo-projects-section .btn-live-link {
+          background: #5C3268;
+          color: #FFFFFF;
+        }
+        html[data-theme="light"] .no-photo-projects-section .btn-live-link:hover {
+          background: #3E1A3E;
+        }
         .no-photo-projects-section .btn-specs-link {
           display: inline-flex;
           align-items: center;
@@ -389,6 +396,12 @@ export function HomeProjectsSection() {
         }
         .no-photo-projects-section .btn-specs-link:hover {
           color: var(--golden-elixir);
+        }
+        html[data-theme="light"] .no-photo-projects-section .btn-specs-link {
+          color: #766579;
+        }
+        html[data-theme="light"] .no-photo-projects-section .btn-specs-link:hover {
+          color: #5C3268;
         }
         .no-photo-projects-section .bottom-summary-banner {
           max-width: 1400px;
@@ -404,8 +417,9 @@ export function HomeProjectsSection() {
           flex-wrap: wrap;
         }
         html[data-theme="light"] .no-photo-projects-section .bottom-summary-banner {
-          background: #FAF6F0;
-          border-color: #D2B19E;
+          background: #FFFFFF;
+          border-color: #E2D5E8;
+          box-shadow: 0 8px 24px rgba(92, 50, 104, 0.05);
         }
         .no-photo-projects-section .summary-text-group {
           display: flex;
@@ -425,7 +439,7 @@ export function HomeProjectsSection() {
           margin: 0;
         }
         html[data-theme="light"] .no-photo-projects-section .summary-lead {
-          color: #392F25;
+          color: #766579;
         }
         .no-photo-projects-section .btn-explore-catalog {
           display: inline-flex;
@@ -445,6 +459,14 @@ export function HomeProjectsSection() {
           background: var(--golden-elixir-hover);
           transform: translateY(-2px);
           box-shadow: 0 4px 14px rgba(226, 186, 101, 0.3);
+        }
+        html[data-theme="light"] .no-photo-projects-section .btn-explore-catalog {
+          background: #5C3268;
+          color: #FFFFFF;
+        }
+        html[data-theme="light"] .no-photo-projects-section .btn-explore-catalog:hover {
+          background: #3E1A3E;
+          box-shadow: 0 4px 14px rgba(92, 50, 104, 0.25);
         }
         @media (max-width: 1240px) {
           .no-photo-projects-section .info-cards-grid {

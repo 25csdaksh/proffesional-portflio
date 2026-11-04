@@ -271,6 +271,7 @@ export default function AboutPage() {
 
         .profile-photo-img {
           object-fit: cover;
+          object-position: center 18%;
           transition: transform 0.4s ease;
         }
 
@@ -978,8 +979,8 @@ export default function AboutPage() {
             <div className="profile-image-card">
               <div className="profile-photo-wrapper">
                 <Image
-                  src="/placeholder-user.jpg"
-                  alt="Daksh Soni — Full-Stack Developer & AI Enthusiast"
+                  src="/daksh-soni.jpg"
+                  alt="Daksh Soni — Computer Science Engineering Student | Full-Stack Developer | AI Enthusiast"
                   fill
                   sizes="(max-width: 820px) 100vw, 360px"
                   priority

@@ -1,26 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
+  ArrowRight,
   ArrowUpRight,
+  ExternalLink,
   GraduationCap,
   MapPin,
   Sparkles,
-  Code2,
-  Cpu,
-  Compass,
-  Rocket,
-  Heart,
-  Quote,
   Sun,
   Moon,
   Linkedin,
   Instagram,
-  ArrowRight,
-  CheckCircle2,
-  Calendar,
+  Download,
+  Quote,
+  Layers,
+  Wheat,
+  Stethoscope,
+  Code2,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -42,6 +42,45 @@ export default function AboutPage() {
     setTheme(next);
   };
 
+  const featuredProjects = [
+    {
+      id: "krishiseva",
+      name: "KrishiSeva",
+      domain: "AgriTech & AI Advisory",
+      icon: Wheat,
+      description:
+        "AI-powered smart agriculture platform designed for regional farming communities. Features on-field crop disease detection, soil analysis, and localized Gujarat meteorological alerts.",
+      technologies: ["Python", "AI", "Gemini API", "Web Development"],
+      image: "/project-covers/krishiseva.svg",
+      link: "/projects",
+      isExternal: false,
+    },
+    {
+      id: "sanjeevni-ai",
+      name: "Sanjeevni AI",
+      domain: "Enterprise HealthTech & ERP",
+      icon: Stethoscope,
+      description:
+        "Comprehensive hospital ERP and clinical management system. Automates OPD/IPD bed allocation, pharmacy prescriptions, and high-concurrency background AI parsing of medical lab reports.",
+      technologies: ["NestJS", "PostgreSQL", "Prisma", "AI"],
+      image: "/project-covers/sanjeevni-ai.svg",
+      link: "/projects",
+      isExternal: false,
+    },
+    {
+      id: "vidyapath",
+      name: "Vidyapath",
+      domain: "EdTech & Career Platform",
+      icon: Layers,
+      description:
+        "Career development and academic platform for Computer Science students. Integrates semester-wise learning resources, project repositories, active hackathon archives, and placement preparation.",
+      technologies: ["React", "Node.js", "MongoDB"],
+      image: "/project-covers/vidyapath.webp",
+      link: "https://shreejeelearning.netlify.app/",
+      isExternal: true,
+    },
+  ];
+
   return (
     <main className="portfolio-shell about-page-wrap">
       <style>{`
@@ -52,25 +91,25 @@ export default function AboutPage() {
           overflow-x: hidden;
         }
 
-        /* Top Nav */
+        /* Top Navigation */
         .about-page-wrap .site-nav {
           max-width: 1380px;
           margin: 0 auto;
-          padding: 22px 36px;
+          padding: 20px 36px;
           display: flex;
           align-items: center;
           justify-content: space-between;
           border-bottom: 1px solid var(--border);
           position: sticky;
           top: 0;
-          background: var(--nav-bg, rgba(9, 10, 15, 0.85));
+          background: var(--nav-bg, rgba(9, 10, 15, 0.88));
           backdrop-filter: blur(14px);
           -webkit-backdrop-filter: blur(14px);
           z-index: 100;
         }
 
         html[data-theme="light"] .about-page-wrap .site-nav {
-          background: rgba(251, 248, 242, 0.88);
+          background: rgba(251, 248, 242, 0.9);
           border-color: #e5ded3;
         }
 
@@ -112,7 +151,7 @@ export default function AboutPage() {
           padding-bottom: 2px;
         }
 
-        .about-page-wrap .nav-action-btns {
+        .about-page-wrap .nav-actions-group {
           display: flex;
           align-items: center;
           gap: 12px;
@@ -137,7 +176,7 @@ export default function AboutPage() {
           transform: rotate(15deg);
         }
 
-        .about-page-wrap .btn-contact-nav {
+        .about-page-wrap .btn-nav-talk {
           padding: 8px 18px;
           border-radius: 9999px;
           background: var(--primary);
@@ -148,24 +187,24 @@ export default function AboutPage() {
           transition: all 0.2s ease;
         }
 
-        .about-page-wrap .btn-contact-nav:hover {
+        .about-page-wrap .btn-nav-talk:hover {
           background: #edd39a;
           transform: translateY(-1px);
         }
 
         /* Container */
-        .about-container {
-          max-width: 1120px;
+        .about-main-container {
+          max-width: 1200px;
           margin: 0 auto;
-          padding: 60px 32px 100px;
+          padding: 48px 32px 100px;
         }
 
-        /* Back Button Bar */
-        .about-back-bar {
-          margin-bottom: 34px;
+        /* Back Breadcrumb */
+        .about-breadcrumb {
+          margin-bottom: 36px;
         }
 
-        .about-back-link {
+        .about-breadcrumb a {
           display: inline-flex;
           align-items: center;
           gap: 7px;
@@ -176,21 +215,204 @@ export default function AboutPage() {
           transition: color 0.2s ease;
         }
 
-        .about-back-link:hover {
+        .about-breadcrumb a:hover {
           color: var(--primary);
         }
 
-        /* Hero Section */
-        .about-hero-section {
+        /* Profile Layout (Left: Image, Right: Intro) */
+        .about-profile-hero {
           display: grid;
-          grid-template-columns: 1.25fr 0.75fr;
-          gap: 48px;
-          align-items: center;
-          padding-bottom: 54px;
-          border-bottom: 1px solid var(--border);
+          grid-template-columns: 360px 1fr;
+          gap: 56px;
+          align-items: start;
         }
 
-        .about-hero-eyebrow {
+        /* Profile Card (Left Column) */
+        .profile-media-column {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          position: sticky;
+          top: 96px;
+        }
+
+        .profile-image-card {
+          background: var(--card);
+          border: 1px solid var(--card-border);
+          border-radius: 18px;
+          padding: 14px;
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+
+        html[data-theme="light"] .profile-image-card {
+          background: #ffffff;
+          border-color: #e2e8f0;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .profile-image-card:hover {
+          transform: translateY(-3px);
+          border-color: rgba(226, 194, 134, 0.5);
+        }
+
+        .profile-photo-wrapper {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 4 / 4.7;
+          border-radius: 12px;
+          overflow: hidden;
+          background: #141724;
+        }
+
+        html[data-theme="light"] .profile-photo-wrapper {
+          background: #f1f5f9;
+        }
+
+        .profile-photo-img {
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+
+        .profile-photo-wrapper:hover .profile-photo-img {
+          transform: scale(1.03);
+        }
+
+        /* Status Badge on Photo */
+        .profile-badge-overlay {
+          position: absolute;
+          bottom: 12px;
+          left: 12px;
+          right: 12px;
+          background: rgba(9, 10, 15, 0.85);
+          backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          border-radius: 8px;
+          padding: 8px 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 11.5px;
+        }
+
+        html[data-theme="light"] .profile-badge-overlay {
+          background: rgba(255, 255, 255, 0.92);
+          border-color: rgba(0, 0, 0, 0.08);
+        }
+
+        .status-dot-pulse {
+          width: 7px;
+          height: 7px;
+          border-radius: 50%;
+          background: #10b981;
+          display: inline-block;
+          box-shadow: 0 0 8px #10b981;
+        }
+
+        .badge-status-text {
+          font-weight: 600;
+          color: var(--foreground);
+        }
+
+        .badge-location-text {
+          color: var(--muted);
+          font-size: 11px;
+        }
+
+        /* Profile Actions Below Image */
+        .profile-social-dock {
+          background: var(--card);
+          border: 1px solid var(--card-border);
+          border-radius: 12px;
+          padding: 14px 18px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 12px;
+        }
+
+        html[data-theme="light"] .profile-social-dock {
+          background: #ffffff;
+          border-color: #e2e8f0;
+        }
+
+        .profile-social-dock .meta-location {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 12px;
+          color: var(--muted);
+        }
+
+        .profile-social-dock .social-icons-cluster {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .dock-icon-btn {
+          width: 36px;
+          height: 36px;
+          border-radius: 8px;
+          display: grid;
+          place-items: center;
+          border: 1px solid var(--card-border);
+          color: var(--foreground);
+          text-decoration: none;
+          transition: all 0.2s ease;
+        }
+
+        .dock-icon-btn.linkedin {
+          color: #0a66c2;
+        }
+
+        .dock-icon-btn.linkedin:hover {
+          background: #0a66c2;
+          color: #ffffff;
+          border-color: #0a66c2;
+        }
+
+        .dock-icon-btn.instagram {
+          color: #e1306c;
+        }
+
+        .dock-icon-btn.instagram:hover {
+          background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+          color: #ffffff;
+          border-color: transparent;
+        }
+
+        .btn-download-resume {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 12px;
+          border-radius: 10px;
+          background: rgba(226, 194, 134, 0.08);
+          border: 1px solid rgba(226, 194, 134, 0.3);
+          color: var(--primary);
+          font-size: 12.5px;
+          font-weight: 700;
+          text-decoration: none;
+          transition: all 0.2s ease;
+        }
+
+        .btn-download-resume:hover {
+          background: var(--primary);
+          color: #090a0f;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
+        }
+
+        /* Introduction Content (Right Column) */
+        .profile-content-column {
+          display: flex;
+          flex-direction: column;
+          gap: 26px;
+        }
+
+        .profile-kicker {
           display: inline-flex;
           align-items: center;
           gap: 8px;
@@ -200,367 +422,381 @@ export default function AboutPage() {
           text-transform: uppercase;
           color: var(--primary);
           font-weight: 700;
-          margin-bottom: 16px;
         }
 
-        .about-hero-title {
+        .profile-name-title {
           font-family: Georgia, 'Times New Roman', serif;
-          font-size: clamp(38px, 4.5vw, 56px);
-          line-height: 1.08;
-          letter-spacing: -1.8px;
-          margin: 0 0 20px;
-          color: var(--foreground);
+          font-size: clamp(42px, 5vw, 62px);
           font-weight: 400;
-        }
-
-        .about-hero-title em {
-          font-family: Georgia, serif;
-          font-style: italic;
-          color: var(--primary);
-        }
-
-        .about-hero-subtitle {
-          font-size: 15px;
-          line-height: 1.7;
-          color: var(--muted);
-          margin: 0 0 24px;
-          max-width: 580px;
-        }
-
-        .about-hero-pills {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-
-        .about-pill {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 6px 14px;
-          border-radius: 9999px;
-          font-size: 12px;
-          background: rgba(226, 194, 134, 0.08);
-          border: 1px solid rgba(226, 194, 134, 0.25);
+          letter-spacing: -2px;
+          margin: 0;
+          line-height: 1.05;
           color: var(--foreground);
         }
 
-        .about-pill svg {
+        .profile-name-title span {
           color: var(--primary);
         }
 
-        /* Quick Stat Card (Hero Right) */
-        .about-quick-profile-card {
-          background: var(--card);
-          border: 1px solid var(--card-border);
-          border-radius: 16px;
-          padding: 30px 28px;
+        .profile-professional-subtitle {
+          font-size: 17px;
+          line-height: 1.45;
+          font-weight: 600;
+          color: var(--primary);
+          margin: -8px 0 0;
+          letter-spacing: -0.2px;
+        }
+
+        .profile-bio-paragraphs {
           display: flex;
           flex-direction: column;
-          gap: 20px;
-          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
-        }
-
-        html[data-theme="light"] .about-quick-profile-card {
-          background: #ffffff;
-          border-color: #e2e8f0;
-          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
-        }
-
-        .profile-card-header {
-          display: flex;
-          align-items: center;
           gap: 16px;
         }
 
-        .profile-avatar-initials {
-          width: 56px;
-          height: 56px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, var(--primary) 0%, #c49e53 100%);
-          color: #090a0f;
-          font-family: Georgia, serif;
-          font-size: 22px;
-          font-weight: 700;
-          display: grid;
-          place-items: center;
-          box-shadow: 0 6px 18px rgba(226, 194, 134, 0.35);
-        }
-
-        .profile-meta-title h3 {
+        .profile-bio-paragraphs p {
           margin: 0;
-          font-size: 18px;
-          font-weight: 700;
-          color: var(--foreground);
-        }
-
-        .profile-meta-title p {
-          margin: 3px 0 0;
-          font-size: 12.5px;
-          color: var(--primary);
-          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        }
-
-        .profile-facts-list {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-          border-top: 1px solid var(--border);
-          border-bottom: 1px solid var(--border);
-          padding: 16px 0;
-        }
-
-        .fact-item {
-          display: flex;
-          align-items: baseline;
-          justify-content: space-between;
-          font-size: 13px;
-          gap: 12px;
-        }
-
-        .fact-label {
+          font-size: 16px;
+          line-height: 1.8;
           color: var(--muted);
-          font-size: 12px;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-          font-family: ui-monospace, monospace;
         }
 
-        .fact-value {
-          font-weight: 600;
-          color: var(--foreground);
-          text-align: right;
-        }
-
-        .profile-social-actions {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-        }
-
-        .btn-profile-social {
-          flex: 1;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          padding: 10px 14px;
-          border-radius: 8px;
-          font-size: 12px;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.2s ease;
-        }
-
-        .btn-profile-social.linkedin {
-          background: rgba(10, 102, 194, 0.12);
-          border: 1px solid rgba(10, 102, 194, 0.3);
-          color: #0a66c2;
-        }
-
-        .btn-profile-social.linkedin:hover {
-          background: #0a66c2;
-          color: #ffffff;
-        }
-
-        .btn-profile-social.instagram {
-          background: rgba(225, 48, 108, 0.12);
-          border: 1px solid rgba(225, 48, 108, 0.3);
-          color: #e1306c;
-        }
-
-        .btn-profile-social.instagram:hover {
-          background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-          color: #ffffff;
-          border-color: transparent;
-        }
-
-        /* Core Philosophy Quote Block */
-        .about-philosophy-callout {
-          margin: 50px 0;
-          padding: 30px 36px;
+        /* Core Philosophy Accent Card */
+        .about-philosophy-quote {
+          margin: 10px 0 4px;
+          padding: 22px 26px;
           background: rgba(226, 194, 134, 0.05);
-          border-left: 4px solid var(--primary);
+          border-left: 3px solid var(--primary);
           border-top: 1px solid var(--card-border);
           border-right: 1px solid var(--card-border);
           border-bottom: 1px solid var(--card-border);
-          border-radius: 0 14px 14px 0;
+          border-radius: 0 12px 12px 0;
           display: flex;
           flex-direction: column;
-          gap: 14px;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          gap: 10px;
+          transition: transform 0.2s ease, background 0.2s ease;
         }
 
-        html[data-theme="light"] .about-philosophy-callout {
+        html[data-theme="light"] .about-philosophy-quote {
           background: #fbf8f2;
           border-color: #e5ded3;
           border-left-color: var(--primary);
         }
 
-        .about-philosophy-kicker {
+        .about-philosophy-quote:hover {
+          transform: translateX(4px);
+          background: rgba(226, 194, 134, 0.08);
+        }
+
+        .quote-kicker {
           display: inline-flex;
           align-items: center;
-          gap: 7px;
+          gap: 6px;
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-          font-size: 11px;
-          letter-spacing: 1.8px;
+          font-size: 10.5px;
+          letter-spacing: 1.5px;
           text-transform: uppercase;
           color: var(--primary);
           font-weight: 700;
         }
 
-        .about-philosophy-text {
+        .quote-body {
           font-family: Georgia, 'Times New Roman', serif;
-          font-size: clamp(21px, 2.5vw, 27px);
-          line-height: 1.45;
+          font-size: 18px;
+          line-height: 1.5;
           font-style: italic;
           color: var(--foreground);
           margin: 0;
         }
 
-        .about-philosophy-author {
+        .quote-author-row {
           display: flex;
           align-items: center;
           gap: 8px;
           font-family: ui-monospace, monospace;
-          font-size: 12px;
+          font-size: 11.5px;
           color: var(--muted);
         }
 
-        .about-philosophy-author b {
+        .quote-author-row b {
           color: var(--foreground);
-          font-weight: 700;
+          font-weight: 600;
         }
 
-        .about-philosophy-author span.dot {
+        .quote-author-row .dot {
           color: var(--primary);
         }
 
-        .about-philosophy-author em {
+        .quote-author-row em {
           font-style: normal;
           color: var(--primary);
         }
 
-        /* Narrative Story Sections */
-        .about-story-section {
-          padding: 30px 0 60px;
+        /* Interest Pills Strip */
+        .profile-interest-pills {
           display: flex;
-          flex-direction: column;
-          gap: 48px;
+          align-items: center;
+          gap: 8px;
+          flex-wrap: wrap;
         }
 
-        .story-block {
-          display: grid;
-          grid-template-columns: 280px 1fr;
-          gap: 36px;
-          align-items: baseline;
-        }
-
-        .story-block-label {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-
-        .story-label-kicker {
+        .interest-tag-pill {
           font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
           font-size: 11px;
-          letter-spacing: 1.2px;
-          color: var(--primary);
-          text-transform: uppercase;
-          font-weight: 700;
-        }
-
-        .story-label-title {
-          font-family: Georgia, serif;
-          font-size: 24px;
-          font-weight: 600;
-          color: var(--foreground);
-          letter-spacing: -0.5px;
-          margin: 0;
-        }
-
-        .story-block-body {
-          font-size: 15px;
-          line-height: 1.8;
-          color: var(--muted);
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
-
-        .story-block-body p {
-          margin: 0;
-        }
-
-        .story-block-body strong {
-          color: var(--foreground);
-          font-weight: 600;
-        }
-
-        /* 3-Pillar Cards Grid */
-        .about-pillars-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-          margin-top: 10px;
-        }
-
-        .pillar-card {
-          background: var(--card);
+          padding: 5px 12px;
+          border-radius: 9999px;
+          background: rgba(255, 255, 255, 0.04);
           border: 1px solid var(--card-border);
-          border-radius: 12px;
-          padding: 26px 24px;
-          display: flex;
-          flex-direction: column;
-          gap: 14px;
-          transition: transform 0.25s ease, border-color 0.25s ease;
+          color: var(--muted);
         }
 
-        html[data-theme="light"] .pillar-card {
-          background: #ffffff;
+        html[data-theme="light"] .interest-tag-pill {
+          background: #f1f5f9;
+          color: #475569;
           border-color: #e2e8f0;
         }
 
-        .pillar-card:hover {
-          transform: translateY(-4px);
-          border-color: rgba(226, 194, 134, 0.45);
+        /* Subtle Section Divider */
+        .about-subtle-divider {
+          margin: 64px 0 54px;
+          border: none;
+          height: 1px;
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            var(--border) 20%,
+            var(--border) 80%,
+            transparent 100%
+          );
+          position: relative;
         }
 
-        .pillar-icon-box {
-          width: 44px;
-          height: 44px;
-          border-radius: 10px;
-          background: rgba(226, 194, 134, 0.1);
-          border: 1px solid rgba(226, 194, 134, 0.25);
-          color: var(--primary);
-          display: grid;
-          place-items: center;
+        /* Featured Projects Section */
+        .featured-projects-section {
+          display: flex;
+          flex-direction: column;
+          gap: 36px;
         }
 
-        .pillar-card h4 {
+        .featured-header-row {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 24px;
+          flex-wrap: wrap;
+        }
+
+        .featured-heading-group {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .featured-heading-group h2 {
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: clamp(30px, 3.8vw, 42px);
+          letter-spacing: -1px;
           margin: 0;
-          font-size: 16px;
-          font-weight: 700;
+          font-weight: 400;
           color: var(--foreground);
-          letter-spacing: -0.2px;
         }
 
-        .pillar-card p {
+        .featured-heading-group h2 em {
+          font-style: italic;
+          color: var(--primary);
+        }
+
+        .featured-lead-desc {
           margin: 0;
+          font-size: 14px;
+          color: var(--muted);
+          max-width: 540px;
+          line-height: 1.6;
+        }
+
+        .btn-view-all-projects {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          border-radius: 9999px;
+          background: rgba(226, 194, 134, 0.08);
+          border: 1px solid rgba(226, 194, 134, 0.3);
+          color: var(--primary);
+          font-size: 12.5px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.25s ease;
+          white-space: nowrap;
+        }
+
+        .btn-view-all-projects:hover {
+          background: var(--primary);
+          color: #090a0f;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.25);
+        }
+
+        /* 3-Card Responsive Grid */
+        .featured-projects-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 24px;
+        }
+
+        .about-project-card {
+          background: var(--card);
+          border: 1px solid var(--card-border);
+          border-radius: 14px;
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          gap: 18px;
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.25s ease,
+                      box-shadow 0.25s ease;
+          position: relative;
+        }
+
+        html[data-theme="light"] .about-project-card {
+          background: #ffffff;
+          border-color: #e2e8f0;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .about-project-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(226, 194, 134, 0.5);
+          box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+        }
+
+        html[data-theme="light"] .about-project-card:hover {
+          box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+          border-color: var(--primary);
+        }
+
+        .project-thumbnail-box {
+          width: 100%;
+          height: 140px;
+          border-radius: 9px;
+          overflow: hidden;
+          background: #141724;
+          position: relative;
+          border: 1px solid var(--border);
+        }
+
+        html[data-theme="light"] .project-thumbnail-box {
+          background: #f8fafc;
+        }
+
+        .project-thumbnail-img {
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .about-project-card:hover .project-thumbnail-img {
+          transform: scale(1.05);
+        }
+
+        .project-card-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          margin-top: 4px;
+        }
+
+        .project-domain-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          font-size: 10px;
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          color: var(--primary);
+          font-weight: 700;
+        }
+
+        .project-title {
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 21px;
+          font-weight: 600;
+          color: var(--foreground);
+          margin: 6px 0 0;
+          letter-spacing: -0.3px;
+        }
+
+        .project-desc-text {
           font-size: 13.5px;
           line-height: 1.65;
           color: var(--muted);
+          margin: 8px 0 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
 
-        /* Bottom Callout Banner */
-        .about-bottom-cta {
-          margin-top: 30px;
-          padding: 38px 44px;
-          border-radius: 14px;
+        .project-tech-tags {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          flex-wrap: wrap;
+          margin-top: 10px;
+        }
+
+        .tech-pill-badge {
+          font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+          font-size: 9.5px;
+          padding: 3px 8px;
+          border-radius: 4px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px solid var(--card-border);
+          color: var(--muted);
+        }
+
+        html[data-theme="light"] .tech-pill-badge {
+          background: #f1f5f9;
+          color: #475569;
+          border-color: #e2e8f0;
+        }
+
+        .project-card-footer {
+          border-top: 1px solid var(--border);
+          padding-top: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .project-action-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--foreground);
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        .project-action-link:hover {
+          color: var(--primary);
+        }
+
+        .project-action-link.primary-action {
+          color: var(--primary);
+          font-weight: 700;
+        }
+
+        /* Bottom Callout Section */
+        .about-footer-banner {
+          margin-top: 60px;
+          padding: 36px 40px;
           background: var(--card);
           border: 1px solid var(--card-border);
+          border-radius: 14px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -568,33 +804,32 @@ export default function AboutPage() {
           flex-wrap: wrap;
         }
 
-        html[data-theme="light"] .about-bottom-cta {
+        html[data-theme="light"] .about-footer-banner {
           background: #ffffff;
           border-color: #e2e8f0;
         }
 
-        .cta-text-group h3 {
-          margin: 0 0 6px;
+        .footer-banner-text h3 {
           font-family: Georgia, serif;
-          font-size: 26px;
+          font-size: 24px;
+          margin: 0 0 6px;
           color: var(--foreground);
-          letter-spacing: -0.5px;
+          letter-spacing: -0.4px;
         }
 
-        .cta-text-group p {
+        .footer-banner-text p {
           margin: 0;
           font-size: 14px;
           color: var(--muted);
         }
 
-        .cta-action-btns {
+        .footer-banner-actions {
           display: flex;
           align-items: center;
           gap: 12px;
-          flex-wrap: wrap;
         }
 
-        .btn-primary-explore {
+        .btn-talk-action {
           display: inline-flex;
           align-items: center;
           gap: 8px;
@@ -608,60 +843,80 @@ export default function AboutPage() {
           transition: all 0.2s ease;
         }
 
-        .btn-primary-explore:hover {
+        .btn-talk-action:hover {
           background: #edd39a;
           transform: translateY(-2px);
-          box-shadow: 0 6px 18px rgba(226, 194, 134, 0.3);
+          box-shadow: 0 4px 14px rgba(226, 194, 134, 0.3);
         }
 
-        .btn-secondary-contact {
+        /* Site Footer */
+        .about-site-footer {
+          max-width: 1200px;
+          margin: 40px auto 0;
+          padding: 24px 32px 40px;
+          border-top: 1px solid var(--border);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          font-size: 12.5px;
+          color: var(--muted);
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+
+        .footer-social-links {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+        }
+
+        .footer-social-link {
+          color: var(--muted);
+          text-decoration: none;
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 12px 22px;
-          border-radius: 8px;
-          border: 1px solid var(--card-border);
-          color: var(--foreground);
-          font-size: 13px;
-          font-weight: 600;
-          text-decoration: none;
-          transition: all 0.2s ease;
+          gap: 6px;
+          transition: color 0.2s ease;
         }
 
-        .btn-secondary-contact:hover {
-          border-color: var(--primary);
+        .footer-social-link:hover {
           color: var(--primary);
         }
 
-        /* Responsive */
-        @media (max-width: 960px) {
-          .about-hero-section {
-            grid-template-columns: 1fr;
-            gap: 36px;
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+          .about-profile-hero {
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
           }
-          .story-block {
-            grid-template-columns: 1fr;
-            gap: 16px;
-          }
-          .about-pillars-grid {
-            grid-template-columns: 1fr;
+          .featured-projects-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
 
-        @media (max-width: 680px) {
+        @media (max-width: 820px) {
+          .about-profile-hero {
+            grid-template-columns: 1fr;
+            gap: 36px;
+          }
+          .profile-media-column {
+            position: static;
+            max-width: 360px;
+            margin: 0 auto;
+          }
+          .featured-projects-grid {
+            grid-template-columns: 1fr;
+          }
+          .about-main-container {
+            padding: 36px 20px 80px;
+          }
           .about-page-wrap .site-nav {
             padding: 16px 20px;
           }
           .about-page-wrap .nav-links-row {
             display: none;
           }
-          .about-container {
-            padding: 36px 20px 80px;
-          }
-          .about-philosophy-callout {
-            padding: 22px 20px;
-          }
-          .about-bottom-cta {
+          .about-footer-banner {
             padding: 26px 22px;
           }
         }
@@ -691,7 +946,7 @@ export default function AboutPage() {
           </Link>
         </nav>
 
-        <div className="nav-action-btns">
+        <div className="nav-actions-group">
           <button
             type="button"
             onClick={toggleTheme}
@@ -700,236 +955,285 @@ export default function AboutPage() {
           >
             {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
           </button>
-          <Link href="/#contact" className="btn-contact-nav">
-            Get In Touch
+          <Link href="/#contact" className="btn-nav-talk">
+            Let&apos;s Talk
           </Link>
         </div>
       </header>
 
       {/* Main Container */}
-      <div className="about-container">
-        {/* Back Link */}
-        <div className="about-back-bar">
-          <Link href="/" className="about-back-link">
+      <div className="about-main-container">
+        {/* Breadcrumb Bar */}
+        <div className="about-breadcrumb">
+          <Link href="/">
             <ArrowLeft size={15} />
-            <span>Back to Home</span>
+            <span>Back to Portfolio Home</span>
           </Link>
         </div>
 
-        {/* Hero Section */}
-        <section className="about-hero-section">
-          <div>
-            <div className="about-hero-eyebrow">
+        {/* Profile Hero Layout (Image on LEFT, Introduction on RIGHT) */}
+        <section className="about-profile-hero">
+          {/* LEFT COLUMN: Profile Image & Personal Badges */}
+          <div className="profile-media-column">
+            <div className="profile-image-card">
+              <div className="profile-photo-wrapper">
+                <Image
+                  src="/placeholder-user.jpg"
+                  alt="Daksh Soni — Full-Stack Developer & AI Enthusiast"
+                  fill
+                  sizes="(max-width: 820px) 100vw, 360px"
+                  priority
+                  className="profile-photo-img"
+                />
+                <div className="profile-badge-overlay">
+                  <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                    <span className="status-dot-pulse" />
+                    <span className="badge-status-text">Available to build</span>
+                  </div>
+                  <span className="badge-location-text">Patan, Gujarat</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Meta Dock */}
+            <div className="profile-social-dock">
+              <div className="meta-location">
+                <GraduationCap size={15} style={{ color: "var(--primary)" }} />
+                <span>CSPIT, CHARUSAT</span>
+              </div>
+              <div className="social-icons-cluster">
+                <a
+                  href="https://www.linkedin.com/in/daksh-soni-7ab474372/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dock-icon-btn linkedin"
+                  aria-label="Connect with Daksh Soni on LinkedIn"
+                  title="LinkedIn"
+                >
+                  <Linkedin size={16} />
+                </a>
+                <a
+                  href="https://www.instagram.com/dakshsoni_005"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="dock-icon-btn instagram"
+                  aria-label="Follow Daksh Soni on Instagram (@dakshsoni_005)"
+                  title="Instagram (@dakshsoni_005)"
+                >
+                  <Instagram size={16} />
+                </a>
+              </div>
+            </div>
+
+            {/* Resume Action */}
+            <a
+              href="/Daksh_Soni_Resume.pdf"
+              download
+              className="btn-download-resume"
+            >
+              <Download size={15} />
+              <span>Download Résumé</span>
+            </a>
+          </div>
+
+          {/* RIGHT COLUMN: Name, Professional Title, Introduction & Core Philosophy */}
+          <div className="profile-content-column">
+            <div className="profile-kicker">
               <Sparkles size={14} />
-              <span>01 — THE DEVELOPER BEHIND THE CODE</span>
+              <span>ABOUT ME</span>
             </div>
-            <h1 className="about-hero-title">
-              Engineering thoughtful systems with <em>curiosity &amp; intent.</em>
+
+            <h1 className="profile-name-title">
+              Daksh Soni<span>.</span>
             </h1>
-            <p className="about-hero-subtitle">
-              I&apos;m Daksh Soni, a Computer Science &amp; Engineering undergrad at
-              CHARUSAT. I bridge the gap between abstract algorithmic ideas and
-              real-world products that solve genuine everyday friction.
+
+            <p className="profile-professional-subtitle">
+              Computer Science Engineering Student | Full-Stack Developer | AI Enthusiast
             </p>
-            <div className="about-hero-pills">
-              <span className="about-pill">
-                <GraduationCap size={14} /> B.Tech CSE @ CSPIT, CHARUSAT
-              </span>
-              <span className="about-pill">
-                <MapPin size={14} /> Patan, Gujarat, India
-              </span>
-              <span className="about-pill">
-                <Code2 size={14} /> Full-Stack &amp; AI Engineering
-              </span>
-            </div>
-          </div>
 
-          {/* Quick Snapshot Card */}
-          <div className="about-quick-profile-card">
-            <div className="profile-card-header">
-              <div className="profile-avatar-initials">DS</div>
-              <div className="profile-meta-title">
-                <h3>Daksh Soni</h3>
-                <p>@25csdaksh • CHARUSAT</p>
-              </div>
+            {/* Biography */}
+            <div className="profile-bio-paragraphs">
+              <p>
+                Hi, I&apos;m Daksh Soni, a Computer Science Engineering student
+                and passionate software developer. I enjoy building modern web
+                applications, exploring artificial intelligence, and transforming
+                innovative ideas into practical digital solutions.
+              </p>
+              <p>
+                My interests include full-stack development, AI-powered
+                applications, backend engineering, and startup innovation. I
+                continuously explore new technologies and work on projects that
+                solve real-world problems.
+              </p>
             </div>
 
-            <div className="profile-facts-list">
-              <div className="fact-item">
-                <span className="fact-label">University</span>
-                <span className="fact-value">CHARUSAT, CSPIT</span>
+            {/* Core Philosophy Quote Card */}
+            <div className="about-philosophy-quote">
+              <div className="quote-kicker">
+                <Quote size={13} /> CORE PHILOSOPHY
               </div>
-              <div className="fact-item">
-                <span className="fact-label">Specialization</span>
-                <span className="fact-value">Computer Science &amp; Engg.</span>
-              </div>
-              <div className="fact-item">
-                <span className="fact-label">Primary Stack</span>
-                <span className="fact-value">Next.js, Python, TypeScript</span>
-              </div>
-              <div className="fact-item">
-                <span className="fact-label">Focus Areas</span>
-                <span className="fact-value">RAG AI, FinTech, Hospital ERP</span>
+              <blockquote className="quote-body">
+                &ldquo;I don&apos;t just want to write code. I want to build
+                products people remember.&rdquo;
+              </blockquote>
+              <div className="quote-author-row">
+                <b>Daksh Soni</b>
+                <span className="dot">•</span>
+                <em>Engineering Mindset</em>
               </div>
             </div>
 
-            <div className="profile-social-actions">
-              <a
-                href="https://www.linkedin.com/in/daksh-soni-7ab474372/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-profile-social linkedin"
-              >
-                <Linkedin size={15} />
-                <span>LinkedIn</span>
-              </a>
-              <a
-                href="https://www.instagram.com/dakshsoni_005"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-profile-social instagram"
-              >
-                <Instagram size={15} />
-                <span>Instagram</span>
-              </a>
+            {/* Focus Pills */}
+            <div className="profile-interest-pills">
+              <span className="interest-tag-pill">Full-Stack Development</span>
+              <span className="interest-tag-pill">AI &amp; RAG Pipelines</span>
+              <span className="interest-tag-pill">Backend Architecture</span>
+              <span className="interest-tag-pill">Startup Innovation</span>
             </div>
           </div>
         </section>
 
-        {/* Core Philosophy Callout Block */}
-        <section className="about-philosophy-callout">
-          <div className="about-philosophy-kicker">
-            <Quote size={14} />
-            <span>CORE PHILOSOPHY</span>
-          </div>
-          <blockquote className="about-philosophy-text">
-            &ldquo;I don&apos;t just want to write code. I want to build products
-            people remember.&rdquo;
-          </blockquote>
-          <div className="about-philosophy-author">
-            <b>Daksh Soni</b>
-            <span className="dot">•</span>
-            <em>Engineering Mindset</em>
-          </div>
-        </section>
+        {/* Subtle Section Divider */}
+        <hr className="about-subtle-divider" />
 
-        {/* Narrative Journey */}
-        <section className="about-story-section">
-          {/* Block 1: The Beginning */}
-          <div className="story-block">
-            <div className="story-block-label">
-              <span className="story-label-kicker">CHAPTER 01</span>
-              <h2 className="story-label-title">The Spark &amp; Curiosity</h2>
-            </div>
-            <div className="story-block-body">
-              <p>
-                My journey into computing began with a simple question:{" "}
-                <strong>how do millions of lines of invisible logic translate into things people use every day?</strong>{" "}
-                From writing my earliest terminal programs in C to exploring data structures
-                and Python scripting, every problem solved felt like finding the missing piece
-                of a giant puzzle.
-              </p>
-              <p>
-                As I entered <strong>CSPIT at CHARUSAT</strong>, that curiosity turned into
-                a rigorous commitment to building full-scale applications. I realized
-                that learning syntax was only the baseline—the real art is designing
-                systems that handle edge cases gracefully, maintain clean architecture, and
-                provide seamless user experiences.
-              </p>
-            </div>
-          </div>
-
-          {/* Block 2: What I Build & Why */}
-          <div className="story-block">
-            <div className="story-block-label">
-              <span className="story-label-kicker">CHAPTER 02</span>
-              <h2 className="story-label-title">Real-World Engineering</h2>
-            </div>
-            <div className="story-block-body">
-              <p>
-                Rather than building generic clones, I focus on solving problems
-                observed in local agriculture, healthcare operations, and student productivity:
-              </p>
-              <p>
-                In <strong>StudyLM / AdhyayanLM</strong>, I implemented document-grounded
-                Retrieval-Augmented Generation (RAG) with vector databases so students could
-                study complex textbooks with verifiable citations without hallucinations.
-                In <strong>HisabSetu</strong>, I engineered an offline-first financial tracker
-                compiled to a native Android APK with encrypted cloud sync.
-              </p>
-              <p>
-                Whether it is building multi-role hospital ERPs with NestJS and Redis queues
-                (<strong>Sanjeevni AI</strong>) or auditing clinical trial risks for the
-                <strong> IBM BoB AI Innovation Hackathon 2026</strong>, my work is always
-                grounded in real impact.
-              </p>
-            </div>
-          </div>
-
-          {/* Block 3: Engineering Pillars */}
-          <div className="story-block">
-            <div className="story-block-label">
-              <span className="story-label-kicker">CHAPTER 03</span>
-              <h2 className="story-label-title">Guiding Principles</h2>
-            </div>
-            <div>
-              <div className="about-pillars-grid">
-                <div className="pillar-card">
-                  <div className="pillar-icon-box">
-                    <Compass size={20} />
-                  </div>
-                  <h4>Product-First Mindset</h4>
-                  <p>
-                    Code is only a means to an end. Understanding the human workflow
-                    and friction always precedes picking the technical architecture.
-                  </p>
-                </div>
-
-                <div className="pillar-card">
-                  <div className="pillar-icon-box">
-                    <Cpu size={20} />
-                  </div>
-                  <h4>AI Grounded in Truth</h4>
-                  <p>
-                    Deploying generative AI with strict safety guardrails, verified source
-                    citations, and domain-specific confidence scoring.
-                  </p>
-                </div>
-
-                <div className="pillar-card">
-                  <div className="pillar-icon-box">
-                    <Rocket size={20} />
-                  </div>
-                  <h4>Clean Scalability</h4>
-                  <p>
-                    Writing modular TypeScript, structuring relational schemas with
-                    referential integrity, and designing responsive interfaces.
-                  </p>
-                </div>
+        {/* FEATURED PROJECTS SECTION */}
+        <section className="featured-projects-section">
+          <div className="featured-header-row">
+            <div className="featured-heading-group">
+              <div className="profile-kicker">
+                <Code2 size={13} />
+                <span>FEATURED PROJECTS</span>
               </div>
+              <h2>
+                Systems engineered for <em>practical impact.</em>
+              </h2>
+              <p className="featured-lead-desc">
+                A clean showcase of key software solutions I&apos;ve designed across
+                smart agriculture, healthcare infrastructure, and academic roadmaps.
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* Bottom Callout Banner */}
-        <div className="about-bottom-cta">
-          <div className="cta-text-group">
-            <h3>Interested in collaborating?</h3>
-            <p>
-              Explore my complete catalog of 11 projects or reach out for internships &amp; software development.
-            </p>
-          </div>
-          <div className="cta-action-btns">
-            <Link href="/projects" className="btn-primary-explore">
-              <span>Explore All 11 Projects</span>
+            <Link href="/projects" className="btn-view-all-projects">
+              <span>View All 11 Projects Catalog</span>
               <ArrowRight size={15} />
             </Link>
-            <Link href="/#contact" className="btn-secondary-contact">
+          </div>
+
+          {/* 3-Card Responsive Grid */}
+          <div className="featured-projects-grid">
+            {featuredProjects.map((item) => {
+              const IconComp = item.icon;
+              return (
+                <div key={item.id} className="about-project-card">
+                  <div>
+                    {/* Small Project Image / Thumbnail */}
+                    <div className="project-thumbnail-box">
+                      <Image
+                        src={item.image}
+                        alt={`${item.name} project cover`}
+                        fill
+                        className="project-thumbnail-img"
+                        sizes="(max-width: 820px) 100vw, 360px"
+                      />
+                    </div>
+
+                    <div className="project-card-header">
+                      <span className="project-domain-pill">
+                        <IconComp size={13} />
+                        <span>{item.domain}</span>
+                      </span>
+                    </div>
+
+                    <h3 className="project-title">{item.name}</h3>
+
+                    <p className="project-desc-text">{item.description}</p>
+                  </div>
+
+                  <div>
+                    {/* Technology Tags */}
+                    <div className="project-tech-tags">
+                      {item.technologies.map((tech) => (
+                        <span key={tech} className="tech-pill-badge">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Action Link */}
+                    <div className="project-card-footer">
+                      {item.isExternal ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-action-link primary-action"
+                        >
+                          <span>Live Website</span>
+                          <ExternalLink size={13} />
+                        </a>
+                      ) : (
+                        <Link
+                          href={`/projects`}
+                          className="project-action-link primary-action"
+                        >
+                          <span>View Specifications</span>
+                          <ArrowUpRight size={14} />
+                        </Link>
+                      )}
+
+                      <Link href="/projects" className="project-action-link">
+                        <span>All Details</span>
+                        <ArrowUpRight size={13} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Bottom Banner */}
+        <div className="about-footer-banner">
+          <div className="footer-banner-text">
+            <h3>Let&apos;s build something meaningful together.</h3>
+            <p>
+              Open for full-stack engineering internships, AI projects, and innovative software collaborations.
+            </p>
+          </div>
+          <div className="footer-banner-actions">
+            <Link href="/#contact" className="btn-talk-action">
               <span>Get In Touch</span>
-              <ArrowUpRight size={15} />
+              <ArrowRight size={15} />
             </Link>
           </div>
         </div>
+
+        {/* Site Footer */}
+        <footer className="about-site-footer">
+          <span>
+            <MapPin size={13} style={{ display: "inline", verticalAlign: "middle" }} /> Patan, Gujarat, India · CSE @ CHARUSAT
+          </span>
+          <div className="footer-social-links">
+            <a
+              href="https://www.linkedin.com/in/daksh-soni-7ab474372/"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-social-link"
+            >
+              <Linkedin size={15} /> LinkedIn
+            </a>
+            <a
+              href="https://www.instagram.com/dakshsoni_005"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-social-link"
+            >
+              <Instagram size={15} /> Instagram
+            </a>
+          </div>
+          <span>© 2026 Daksh Soni</span>
+        </footer>
       </div>
     </main>
   );
